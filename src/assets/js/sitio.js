@@ -15,6 +15,7 @@
 
   // Vídeos en bucle mudo: solo se cargan y reproducen a la vista y si no se pide menos movimiento.
   const videos = document.querySelectorAll("video[data-autoplay]");
+  if (quieto.matches) videos.forEach((v) => { v.removeAttribute("autoplay"); v.pause(); });
   if (videos.length && hayIO) {
     const io = new IntersectionObserver((entradas) => {
       for (const e of entradas) {
@@ -27,7 +28,14 @@
         }
       }
     }, { threshold: 0.2 });
-    videos.forEach((v) => io.observe(v));
+    videos.forEach((v) => { v.muted = true; io.observe(v); });
+    // Si el móvil bloquea la reproducción automática (ahorro de batería), arrancan al primer toque.
+    const alTocar = () => videos.forEach((v) => {
+      const r = v.getBoundingClientRect();
+      if (!quieto.matches && r.bottom > 0 && r.top < innerHeight && v.paused) v.play().catch(() => {});
+    });
+    addEventListener("touchstart", alTocar, { passive: true, once: true });
+    addEventListener("pointerdown", alTocar, { passive: true, once: true });
   }
 
   // Las imágenes del texto de lectura se abren desde una máscara; las listas de enlaces entran fila a fila.

@@ -110,8 +110,8 @@ export default function (eleventyConfig) {
     const nombreVideo = h.video;
     if (nombreVideo && m.videos[nombreVideo]) {
       const v = m.videos[nombreVideo];
-      return `<video class="${opciones.clase || ""}" ${marca} muted loop playsinline preload="none" poster="${v.poster}" width="${v.w}" height="${v.h}" aria-hidden="true" data-autoplay>` +
-        `<source src="${v.webm}" type="video/webm"><source src="${v.mp4}" type="video/mp4"></video>`;
+      return `<video class="${opciones.clase || ""}" ${marca} muted autoplay loop playsinline disablepictureinpicture preload="none" poster="${v.poster}" width="${v.w}" height="${v.h}" aria-hidden="true" data-autoplay>` +
+        `<source src="${v.mp4}" type="video/mp4"><source src="${v.webm}" type="video/webm"></video>`;
     }
     const nombreImg = h.imagen || h.poster;
     if (nombreImg && m.imagenes[nombreImg]) {
