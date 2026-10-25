@@ -22,7 +22,7 @@
 
   // Las imágenes del texto de lectura se abren desde una máscara; las listas de enlaces entran fila a fila.
   document.querySelectorAll(".prosa figure, .indice-guia .familia-foto, .articulo-foto").forEach((f) => { f.dataset.revelar = "asentar"; });
-  document.querySelectorAll(".doc-relacionados ul, .lista-articulos, .familias-lista").forEach((l) => { l.dataset.revelar = "fila"; });
+  document.querySelectorAll(".lista-articulos, .familias-lista").forEach((l) => { l.dataset.revelar = "fila"; });
 
   // Revelados: una sola vez, cuando el bloque entra por abajo.
   const revelar = [...document.querySelectorAll("[data-revelar]")];

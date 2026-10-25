@@ -11,7 +11,8 @@ migas:
 ---
 {%- set lista = productores or [] -%}
 {%- set porComunidad = lista | agruparPor("comunidad") -%}
-<article class="doc pagina-mapa">
+<article class="doc pagina-mapa con-banda">
+  <figure class="doc-banda">{% hueco "v2", { clase: "cubre", sizes: "100vw", prioridad: true } %}</figure>
   <header class="doc-cabeza">
     <div class="doc-lado-cabeza">
       <p class="doc-entradilla">{{ lista | length }} productores de {{ porComunidad | length }} comunidades. Cada uno, comprobado en su propia web.</p>
@@ -52,7 +53,10 @@ migas:
   <p class="mapa-leyenda"><span class="ley-forma f-cerveza"></span> Cerveza <span class="ley-forma f-vermut-y-destilados"></span> Vermut y destilados <span class="ley-forma f-sin-alcohol"></span> Sin alcohol</p>
 
   <section class="mapa-criterio" aria-labelledby="criterio-t">
-    <h2 id="criterio-t" class="titulo-seccion">Cómo los elegimos</h2>
+    <div class="mapa-lado-sec">
+      <h2 id="criterio-t" class="titulo-seccion">Cómo los elegimos</h2>
+      <figure class="mapa-foto" data-revelar="mascara">{% imagen "barricas", { clase: "cubre", sizes: "(min-width: 60em) 36vw, 100vw" } %}</figure>
+    </div>
     <div class="mapa-criterio-texto">
       <p>Cada productor de este mapa existe y tiene web propia: hemos comprobado en ella su nombre y su localidad. Buscamos obradores pequeños e independientes de cerveza, vermut, destilados, kombucha y refrescos, y dejamos fuera las marcas que pertenecen a grandes grupos de bebidas.</p>
       <p>Solo publicamos datos públicos de empresa: el nombre comercial, la localidad y la web. El punto del mapa marca el centro de la localidad, no la dirección del obrador. Que alguien no aparezca no significa nada: el mapa crece con el tiempo y cualquier productor puede pedir entrar.</p>
@@ -60,8 +64,11 @@ migas:
   </section>
 
   <section class="mapa-lista" aria-labelledby="lista-t">
-    <h2 id="lista-t" class="titulo-seccion">Todos los productores</h2>
-    <div class="mapa-grupos">
+    <div class="mapa-lado-sec">
+      <h2 id="lista-t" class="titulo-seccion">Todos los productores</h2>
+      <figure class="mapa-foto" data-revelar="mascara">{% imagen "germinacion", { clase: "cubre", sizes: "(min-width: 60em) 36vw, 100vw" } %}</figure>
+    </div>
+    <div class="mapa-grupos" data-revelar="fila">
     {%- for g in porComunidad %}
     <div class="mapa-grupo" data-grupo="{{ g.clave }}">
       <table class="mapa-tabla">
@@ -84,7 +91,10 @@ migas:
   </section>
 
   <aside class="mapa-alta campo-1" aria-labelledby="alta-t">
-    <h2 id="alta-t" class="titulo-seccion">¿Haces bebidas y no apareces?</h2>
+    <div class="mapa-lado-sec">
+      <h2 id="alta-t" class="titulo-seccion">¿Haces bebidas y no apareces?</h2>
+      <figure class="mapa-foto" data-revelar="mascara">{% imagen "malta", { clase: "cubre", sizes: "(min-width: 60em) 36vw, 100vw" } %}</figure>
+    </div>
     <p>Escríbenos con el nombre de tu obrador, tu localidad y tu web. Lo comprobamos y te añadimos. Solo publicamos el nombre, la localidad y la web.</p>
     <a class="boton boton-claro" href="mailto:{{ site.correo }}?subject=Quiero%20aparecer%20en%20el%20mapa%20de%20bebidasartesanales.es&body=Nombre%20del%20productor%3A%0ALocalidad%3A%0AWeb%3A%0AQu%C3%A9%20elabor%C3%A1is%3A%0A">Escribir para aparecer</a>
   </aside>

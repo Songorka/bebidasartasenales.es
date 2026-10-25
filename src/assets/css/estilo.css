@@ -171,7 +171,7 @@ picture.cubre { display: block; }
 .doc-fechas { color: var(--muted); }
 .doc-indice { background: var(--surface); padding: 1.25rem; }
 .doc-indice-titulo { font-size: var(--step-body); letter-spacing: 0; margin-bottom: .6rem; }
-.doc-indice ol { margin: 0; padding-left: 1.2em; display: grid; gap: .35rem; }
+.doc-indice ol { margin: 0; padding: 0; list-style: none; display: grid; gap: .35rem; }
 .doc-indice a { color: var(--ink); }
 
 .prosa > :not(figure):not(table) { max-width: 62ch; }
