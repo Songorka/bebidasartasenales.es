@@ -1,0 +1,60 @@
+---
+layout: base.njk
+---
+{#- Plantilla común de lectura: banda de imagen, título en el eje, margen izquierdo con índice y datos, texto a la derecha del eje. -#}
+{%- set indiceDoc = content | indice -%}
+<article class="doc{% if imagen or huecoImagen %} con-banda{% endif %}">
+  {%- if imagen or huecoImagen %}
+  <figure class="doc-banda">
+    {%- if huecoImagen %}{% hueco huecoImagen, { clase: "cubre", sizes: "100vw", prioridad: true } %}{% else %}{% imagen imagen, { clase: "cubre", sizes: "100vw", prioridad: true } %}{% endif %}
+    {%- if pieImagen %}<figcaption>{{ pieImagen }}</figcaption>{% endif %}
+  </figure>
+  {%- endif %}
+  <header class="doc-cabeza">
+    <div class="doc-lado-cabeza">
+      {%- if padre %}<a class="doc-padre" href="{{ padre.url }}">{{ padre.texto }}</a>{% endif %}
+      {%- if entradilla %}<p class="doc-entradilla">{{ entradilla }}</p>{% endif %}
+    </div>
+    <h1 class="doc-titulo{% if title.length > 32 %} doc-titulo-largo{% endif %}">{{ title }}</h1>
+  </header>
+
+  <div class="doc-cuerpo">
+    <aside class="doc-lado" aria-label="Sobre esta página">
+      {%- if fechas !== false %}
+      <p class="doc-fechas">Publicado el <time datetime="{{ page.date | iso }}">{{ page.date | fecha }}</time>{% if revisado %}. Última revisión: <time datetime="{{ revisado | iso }}">{{ revisado | fecha }}</time>{% endif %}.</p>
+      {%- endif %}
+      {%- if indiceDoc.length > 2 and (content | palabras) > 1000 %}
+      <nav class="doc-indice" aria-labelledby="indice-t">
+        <h2 id="indice-t" class="doc-indice-titulo">En esta página</h2>
+        <ol>
+          {%- for h in indiceDoc %}
+          <li><a href="#{{ h.id }}">{{ h.texto }}</a></li>
+          {%- endfor %}
+        </ol>
+      </nav>
+      {%- endif %}
+    </aside>
+    <div class="prosa">
+      {{ content | safe }}
+    </div>
+  </div>
+
+  {%- if mapaTipo %}
+  <aside class="doc-donde campo-2" aria-labelledby="donde-t">
+    <h2 id="donde-t" class="titulo-seccion">Dónde encontrarla</h2>
+    <p>Productores reales de {{ mapaTexto or (title | lower) }} en España, comprobados uno a uno.</p>
+    <a class="boton boton-tinta" href="/mapa/?tipo={{ mapaTipo }}">Ver en el mapa</a>
+  </aside>
+  {%- endif %}
+
+  {%- if relacionados %}
+  <nav class="doc-relacionados" aria-labelledby="rel-t">
+    <h2 id="rel-t" class="titulo-seccion">Sigue leyendo</h2>
+    <ul>
+      {%- for r in relacionados %}
+      <li><a href="{{ r.url }}">{{ r.texto }}</a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
+  {%- endif %}
+</article>

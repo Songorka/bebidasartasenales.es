@@ -1,0 +1,43 @@
+---
+layout: pagina.njk
+title: Créditos de imágenes
+entradilla: De dónde sale cada fotografía de esta web, quién la hizo y con qué licencia se usa.
+permalink: /creditos/
+imagen: etiqueta-1910
+pieImagen: Etiquetas de cerveza de 1910, de Wikimedia Commons (dominio público).
+description: Autores, licencias y fuentes de las fotografías, vídeos y dibujos que se usan en bebidasartesanales.es.
+---
+<p>Las fotografías de archivo proceden de Wikimedia Commons y se usan con licencias libres que permiten el uso comercial. En la web se muestran en escala de grises y recortadas; las que tienen licencia CC BY-SA siguen bajo esa misma licencia. Ninguna muestra un producto ni un productor de los que aparecen en el mapa.</p>
+
+<h2 id="fotografias">Fotografías</h2>
+<ul class="fuentes">
+{%- for nombre, img in medios.imagenes %}
+{%- if img.credito %}
+  <li><strong>{{ img.alt }}.</strong> «{{ img.credito.titulo }}», de {{ img.credito.autor }}. Licencia <a href="{{ img.credito.licenciaUrl }}">{{ img.credito.licencia }}</a>, vía <a href="{{ img.credito.pagina }}">{{ img.credito.via }}</a>.</li>
+{%- endif %}
+{%- endfor %}
+</ul>
+
+<h2 id="video">Vídeo</h2>
+<ul class="fuentes">
+{%- for nombre, v in medios.videos %}
+{%- if v.credito %}
+  <li>«{{ v.credito.titulo }}», de {{ v.credito.autor }}. Licencia <a href="{{ v.credito.licenciaUrl }}">{{ v.credito.licencia }}</a>, vía <a href="{{ v.credito.pagina }}">{{ v.credito.via }}</a>.</li>
+{%- elif v.generado %}
+  <li>Vídeo «{{ nombre | upper }}» generado con inteligencia artificial para esta web.</li>
+{%- endif %}
+{%- endfor %}
+</ul>
+
+<h2 id="dibujos">Dibujos y mapa</h2>
+<p>Las etiquetas, la botella y los sellos están dibujados para esta web. Las marcas, empresas, direcciones, lotes y números de registro que aparecen en ellos son inventados: no corresponden a ningún producto real.</p>
+<p>El contorno de España del mapa de la portada procede de <a href="https://www.naturalearthdata.com/">Natural Earth</a> (dominio público). El mapa completo usa datos de <a href="https://www.openstreetmap.org/copyright">© colaboradores de OpenStreetMap</a> y la biblioteca <a href="https://leafletjs.com/">Leaflet</a>.</p>
+{%- set generadas = [] %}
+{%- for k in ["g1", "g2", "g3", "g4"] %}{% if medios.huecos[k].generada %}{% set generadas = (generadas.push(k), generadas) %}{% endif %}{% endfor %}
+{%- if generadas.length %}
+<h2 id="ia">Imágenes generadas con IA</h2>
+<p>Algunas imágenes de esta web están generadas con inteligencia artificial. Muestran botellas, etiquetas e ingredientes sin marca y no representan ningún producto real.</p>
+{%- endif %}
+
+<h2 id="tipografia">Tipografía</h2>
+<p>Schibsted Grotesk, de Schibsted, con licencia <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a>.</p>

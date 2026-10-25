@@ -1,0 +1,32 @@
+[
+  {
+    "id": "elaborador",
+    "titulo": "Quién la elabora",
+    "texto": "Busca «elaborado por». Si solo pone «envasado para» o «distribuido por», quien firma la vende, pero quizá no la hace.",
+    "ancla": "quien-la-elabora"
+  },
+  {
+    "id": "direccion",
+    "titulo": "Dónde se hace",
+    "texto": "Una localidad concreta y una dirección. Si la marca presume de pueblo y la dirección es un polígono a cientos de kilómetros, ya tienes una pista.",
+    "ancla": "donde-se-hace"
+  },
+  {
+    "id": "lote",
+    "titulo": "El lote",
+    "texto": "Toda bebida envasada lleva un lote: la «L» con un código. Algunas pequeñas añaden la fecha de elaboración o el número de cocción. Eso es seguimiento de verdad.",
+    "ancla": "el-lote"
+  },
+  {
+    "id": "ingredientes",
+    "titulo": "Los ingredientes",
+    "texto": "Por encima de 1,2 % de alcohol no es obligatorio listarlos. Si una cerveza o un vermut los enumera con detalle, es una decisión, no un trámite.",
+    "ancla": "los-ingredientes"
+  },
+  {
+    "id": "registro",
+    "titulo": "Quién hay detrás",
+    "texto": "El nombre de la empresa que elabora se puede buscar en registros públicos. A veces una marca con aire de barrio pertenece a un grupo internacional.",
+    "ancla": "quien-hay-detras"
+  }
+]

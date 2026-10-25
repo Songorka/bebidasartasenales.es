@@ -1,14 +1,15 @@
 <footer class="pie">
-  <div class="pie-venta">
-    <p><strong>Este dominio está en venta.</strong> Escríbenos a <a href="mailto:{{ site.correo }}?subject=Compra%20del%20dominio%20{{ site.dominio }}">{{ site.correo }}</a>.</p>
+  <div class="pie-fila">
+    <p class="pie-venta">Este dominio está en venta. Si te interesa, escribe a <a href="mailto:{{ site.correo }}?subject=Compra%20del%20dominio%20bebidasartesanales.es">{{ site.correo }}</a>.</p>
+    <p class="pie-responsable">Web solo para mayores de 18 años. Si bebes alcohol, hazlo con moderación.</p>
+    <nav class="pie-nav" aria-label="Legal">
+      <ul>
+        {%- for item in navegacion.pie %}
+        <li><a href="{{ item.url }}">{{ item.texto }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
   </div>
-  <nav aria-label="Pie" class="nav-pie">
-    <ul>
-      {% for item in navegacion.pie %}
-      <li><a href="{{ item.url }}">{{ item.texto }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
-  <p class="responsable">+18 · El consumo responsable es cosa tuya.</p>
-  <p class="legal">© {{ anio }} · {{ site.titular }}</p>
+  <p class="pie-creditos">Fotografías de archivo de Wikimedia Commons con licencias libres; autores y licencias en <a href="/creditos/">créditos</a>. Los dibujos de etiquetas son inventados.{% if medios.huecos.v1.generado or medios.huecos.g1.generada or medios.huecos.g2.generada or medios.huecos.g3.generada or medios.huecos.g4.generada %} Algunas imágenes y vídeos están generados con IA.{% endif %} © {{ anio }} {{ site.titular }}</p>
+  <p class="pie-nombre" aria-hidden="true">bebidasartesanales.es</p>
 </footer>

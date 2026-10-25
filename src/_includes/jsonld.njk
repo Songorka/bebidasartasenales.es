@@ -1,0 +1,32 @@
+{%- if page.url == "/" %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "bebidasartesanales.es",
+  "url": site.url + "/",
+  "inLanguage": "es-ES",
+  "description": site.descripcion,
+  "publisher": { "@type": "Organization", "name": site.titular }
+} | dump | safe }}</script>
+{%- elif ogType == "article" %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description or entradilla,
+  "inLanguage": "es-ES",
+  "mainEntityOfPage": site.url + page.url,
+  "datePublished": page.date | iso,
+  "dateModified": (revisado or page.date) | iso,
+  "image": site.url + (ogImage or "/assets/img/og.jpg"),
+  "author": { "@type": "Organization", "name": "bebidasartesanales.es", "url": site.url + "/" },
+  "publisher": { "@type": "Organization", "name": site.titular }
+} | dump | safe }}</script>
+{%- endif %}
+{%- if migas %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": migas | migasLd(site.url)
+} | dump | safe }}</script>
+{%- endif %}

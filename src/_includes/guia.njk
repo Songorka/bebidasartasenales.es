@@ -1,11 +1,5 @@
 ---
-layout: base.njk
+layout: doc.njk
 ogType: article
 ---
-<article class="guia">
-  <header class="guia-cabecera">
-    <h1>{{ title }}</h1>
-    {% if entradilla %}<p class="entradilla">{{ entradilla }}</p>{% endif %}
-  </header>
-  {{ content | safe }}
-</article>
+{{ content | safe }}

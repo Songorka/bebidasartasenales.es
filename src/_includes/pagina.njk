@@ -1,7 +1,5 @@
 ---
-layout: base.njk
+layout: doc.njk
+fechas: false
 ---
-<article class="pagina">
-  {% if title %}<h1>{{ title }}</h1>{% endif %}
-  {{ content | safe }}
-</article>
+{{ content | safe }}

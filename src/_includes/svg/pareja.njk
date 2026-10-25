@@ -1,0 +1,33 @@
+{#- Dos contraetiquetas inventadas: la de quien elabora y la de una marca que encarga la bebida a otra fábrica. -#}
+{% macro etiquetaReal(pref) %}
+<svg class="etiqueta etiqueta-mini" viewBox="0 0 360 300" role="img" aria-labelledby="{{ pref }}-t" xmlns="http://www.w3.org/2000/svg">
+  <title id="{{ pref }}-t">Etiqueta de quien elabora: nombra al elaborador, su localidad y la fecha de elaboración</title>
+  <rect class="et-papel" width="360" height="300"/>
+  <g class="et-texto">
+    <text x="24" y="52" class="et-nombre">Vermut rojo</text>
+    <text x="24" y="98" class="et-p">Elaborado y embotellado por</text>
+    <text x="24" y="122" class="et-p" font-weight="700">Bodega de Ejemplo, S. L.</text>
+    <text x="24" y="146" class="et-p">Villaejemplo (España)</text>
+    <text x="24" y="196" class="et-p">Vino blanco de la casa, ajenjo, genciana</text>
+    <text x="24" y="218" class="et-p">y piel de naranja. Seis meses en roble.</text>
+    <text x="24" y="268" class="et-lote">L 0926, elaborado en 09/2026</text>
+  </g>
+</svg>
+{% endmacro %}
+
+{% macro etiquetaDisfrazada(pref) %}
+<svg class="etiqueta etiqueta-mini" viewBox="0 0 360 300" role="img" aria-labelledby="{{ pref }}-t" xmlns="http://www.w3.org/2000/svg">
+  <title id="{{ pref }}-t">Etiqueta de una marca que encarga la bebida: habla de receta y tradición, y solo dice para quién se envasa</title>
+  <rect class="et-papel" width="360" height="300"/>
+  <g class="et-texto">
+    <text x="24" y="52" class="et-nombre">Vermut de la abuela</text>
+    <text x="24" y="80" class="et-sub">Receta tradicional, hecho con cariño</text>
+    <text x="24" y="130" class="et-p">Envasado para</text>
+    <text x="24" y="154" class="et-p" font-weight="700">Marcas de Ejemplo, S. A.</text>
+    <text x="24" y="178" class="et-p">Apartado de correos 000, Madrid</text>
+    <text x="24" y="226" class="et-p">Vino, azúcar, alcohol, aromas,</text>
+    <text x="24" y="248" class="et-p">colorante E150a.</text>
+    <text x="24" y="282" class="et-lote">L 260917B</text>
+  </g>
+</svg>
+{% endmacro %}

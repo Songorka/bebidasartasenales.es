@@ -1,29 +1,52 @@
+{%- set tituloPagina = (title + " | bebidasartesanales.es") if (title and page.url != "/") else site.titulo -%}
+{%- set descPagina = description or entradilla or site.descripcion -%}
+{%- set urlPagina = site.url + page.url -%}
+{%- set ogImagen = site.url + (ogImage or "/assets/img/og.jpg") -%}
 <!doctype html>
-<html lang="{{ site.idioma }}">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title or site.titulo }}</title>
-  <meta name="description" content="{{ description or site.descripcion }}">
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-  <meta property="og:site_name" content="{{ site.nombre }}">
+  <title>{{ tituloPagina }}</title>
+  <meta name="description" content="{{ descPagina }}">
+  <link rel="canonical" href="{{ urlPagina }}">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="bebidasartesanales.es">
   <meta property="og:title" content="{{ title or site.titulo }}">
-  <meta property="og:description" content="{{ description or site.descripcion }}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:description" content="{{ descPagina }}">
+  <meta property="og:url" content="{{ urlPagina }}">
   <meta property="og:type" content="{{ ogType or 'website' }}">
-  {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
+  <meta property="og:image" content="{{ ogImagen }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  {%- if site.google_site_verification %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+  {%- endif %}
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="Artículos de bebidasartesanales.es" href="/feed.xml">
+  <link rel="preload" href="/assets/fuentes/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/estilo.css">
-  {% block head %}{% endblock %}
-  {% if site.goatcounter %}
-  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
-  {% endif %}
+  {%- for hoja in (css or []) %}
+  <link rel="stylesheet" href="/assets/css/{{ hoja }}.css">
+  {%- endfor %}
+  <script>document.documentElement.classList.add("js")</script>
+  {%- include "jsonld.njk" %}
+  {%- block head %}{% endblock %}
 </head>
-<body>
+<body class="{{ claseCuerpo or '' }}">
   {% include "nav.njk" %}
   <main id="contenido">
     {{ content | safe }}
   </main>
   {% include "pie.njk" %}
+  <script src="/assets/js/sitio.js" defer></script>
+  {%- for s in (js or []) %}
+  <script src="/assets/js/{{ s }}.js" defer></script>
+  {%- endfor %}
+  {%- if site.goatcounter %}
+  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  {%- endif %}
 </body>
 </html>

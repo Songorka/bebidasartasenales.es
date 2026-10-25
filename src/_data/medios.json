@@ -1,0 +1,219 @@
+{
+  "imagenes": {
+    "lupulo": {
+      "ruta": "/assets/img/archivo/lupulo",
+      "w": 2816,
+      "h": 2112,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Cono de lúpulo verde colgando entre las hojas de la planta",
+      "credito": {
+        "titulo": "Hop cone",
+        "autor": "Nikita Karasik",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=44402154",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "lupulino": {
+      "ruta": "/assets/img/archivo/lupulino",
+      "w": 2993,
+      "h": 1995,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Cono de lúpulo abierto por la mitad con los granos amarillos de lupulina",
+      "credito": {
+        "titulo": "Lupulin in a cross section of a hop cone",
+        "autor": "Andrew Kvalheim",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=109466823",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "cebada": {
+      "ruta": "/assets/img/archivo/cebada",
+      "w": 1333,
+      "h": 2000,
+      "anchos": [
+        640,
+        1200,
+        1333
+      ],
+      "alt": "Espiga de cebada a contraluz",
+      "credito": {
+        "titulo": "Barley ear, backlit 1",
+        "autor": "Phil Sangwell",
+        "licencia": "CC BY 2.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=15981139",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "alambiques": {
+      "ruta": "/assets/img/archivo/alambiques",
+      "w": 3840,
+      "h": 2287,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Sala de destilación con alambiques de cobre",
+      "credito": {
+        "titulo": "Copper Pot Stills",
+        "autor": "Cmyk4317",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=45087957",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "artemisa": {
+      "ruta": "/assets/img/archivo/artemisa",
+      "w": 1970,
+      "h": 2958,
+      "anchos": [
+        640,
+        1200,
+        1970
+      ],
+      "alt": "Lámina botánica de 1906 con dos especies de artemisa, la familia del ajenjo del vermut",
+      "credito": {
+        "titulo": "Nouvelle flore coloriée de poche des Alpes et des Pyrénées (6298281319)",
+        "autor": "Flahault, Charles",
+        "licencia": "public domain",
+        "licenciaUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "pagina": "https://commons.wikimedia.org/wiki/File:Nouvelle_flore_colori%C3%A9e_de_poche_des_Alpes_et_des_Pyr%C3%A9n%C3%A9es_(6298281319).jpg",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "etiqueta-1910": {
+      "ruta": "/assets/img/archivo/etiqueta-1910",
+      "w": 1927,
+      "h": 1263,
+      "anchos": [
+        640,
+        1200,
+        1927
+      ],
+      "alt": "Cuatro etiquetas de cerveza de 1910 que nombran a la cervecera y su ciudad",
+      "credito": {
+        "titulo": "1910 - Eagle Beer Label - Allentown PA",
+        "autor": "Self Scanned",
+        "licencia": "public domain",
+        "licenciaUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "pagina": "https://commons.wikimedia.org/wiki/File:1910_-_Eagle_Beer_Label_-_Allentown_PA.jpg",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "kombucha": {
+      "ruta": "/assets/img/archivo/kombucha",
+      "w": 2420,
+      "h": 2163,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Tarros de kombucha fermentando, tapados con tela, en una estantería",
+      "credito": {
+        "titulo": "Kombucha In Gärgläsern",
+        "autor": "Original-kombucha",
+        "licencia": "CC BY-SA 3.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=21415717",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "jengibre": {
+      "ruta": "/assets/img/archivo/jengibre",
+      "w": 2048,
+      "h": 1536,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Planta de jengibre con la raíz asomando sobre la tierra",
+      "credito": {
+        "titulo": "Zingiber officinale 230935597",
+        "autor": "ritirene",
+        "licencia": "CC BY 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by/4.0",
+        "pagina": "https://commons.wikimedia.org/wiki/File:Zingiber_officinale_230935597.jpg",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "mosto": {
+      "ruta": "/assets/img/archivo/mosto",
+      "w": 1920,
+      "h": 1124,
+      "anchos": [
+        640,
+        1200,
+        1920
+      ],
+      "alt": "Cubo con mosto de cerveza recién salido del tanque",
+      "credito": {
+        "titulo": "Anderson Valley Brewing Company - November 2022 - Sarah Stierch 24",
+        "autor": "Missvain",
+        "licencia": "CC BY 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by/4.0",
+        "pagina": "https://commons.wikimedia.org/wiki/File:Anderson_Valley_Brewing_Company_-_November_2022_-_Sarah_Stierch_24.webm",
+        "via": "Wikimedia Commons"
+      }
+    }
+  },
+  "videos": {
+    "sala-coccion": {
+      "mp4": "/assets/video/sala-coccion.mp4",
+      "webm": "/assets/video/sala-coccion.webm",
+      "poster": "/assets/video/sala-coccion-poster.jpg",
+      "w": 816,
+      "h": 460,
+      "credito": {
+        "titulo": "Anderson Valley Brewing Company - November 2022 - Sarah Stierch 24",
+        "autor": "Missvain",
+        "licencia": "CC BY 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by/4.0",
+        "pagina": "https://commons.wikimedia.org/wiki/File:Anderson_Valley_Brewing_Company_-_November_2022_-_Sarah_Stierch_24.webm",
+        "via": "Wikimedia Commons"
+      }
+    }
+  },
+  "huecos": {
+    "v1": {
+      "video": "sala-coccion",
+      "poster": "mosto",
+      "provisional": true
+    },
+    "v2": {
+      "poster": "kombucha",
+      "provisional": true
+    },
+    "g1": {
+      "svg": "botella",
+      "provisional": true
+    },
+    "g2": {
+      "imagen": "kombucha",
+      "provisional": true
+    },
+    "g3": {
+      "imagen": "lupulino",
+      "provisional": true
+    },
+    "g4": {
+      "imagen": "etiqueta-1910",
+      "provisional": true
+    }
+  }
+}

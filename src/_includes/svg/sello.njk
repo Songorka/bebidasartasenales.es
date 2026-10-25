@@ -1,0 +1,18 @@
+{#- Sello de resultado de "Comprueba tu botella". variante: muy | pinta | ojo -#}
+{% macro sello(variante, pref) %}
+{% set textos = {
+  "muy": { "centro": "Muy", "linea": "artesanal", "titulo": "Muy artesanal" },
+  "pinta": { "centro": "Tiene", "linea": "pinta", "titulo": "Tiene pinta" },
+  "ojo": { "centro": "Ojo", "linea": "puede ser marketing", "titulo": "Ojo, puede ser marketing" }
+} %}
+{% set t = textos[variante] %}
+<svg class="sello sello-{{ variante }}" viewBox="0 0 240 240" role="img" aria-labelledby="{{ pref }}-t" xmlns="http://www.w3.org/2000/svg">
+  <title id="{{ pref }}-t">Sello: {{ t.titulo }}</title>
+  <defs><path id="{{ pref }}-arco" d="M 36 120 A 84 84 0 1 1 204 120"/></defs>
+  <circle class="sello-fondo" cx="120" cy="120" r="112"/>
+  <circle class="sello-aro" cx="120" cy="120" r="100" fill="none" stroke-width="6"/>
+  <text class="sello-arco"><textPath href="#{{ pref }}-arco" startOffset="50%" text-anchor="middle">Comprobado en bebidasartesanales.es</textPath></text>
+  <text class="sello-centro" x="120" y="136" text-anchor="middle">{{ t.centro }}</text>
+  <text class="sello-linea" x="120" y="170" text-anchor="middle">{{ t.linea }}</text>
+</svg>
+{% endmacro %}

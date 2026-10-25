@@ -1,0 +1,47 @@
+{#- Contraetiqueta comentada de una cerveza ficticia. Zonas: elaborador, direccion, lote, ingredientes, registro.
+    Uso: {% from "svg/etiqueta.njk" import etiqueta %}{{ etiqueta("pref", "clase", true) }} -#}
+{% macro etiqueta(pref, clase="", titulo=true) %}
+<svg class="etiqueta {{ clase }}" viewBox="0 0 360 540" role="img" aria-labelledby="{{ pref }}-t {{ pref }}-d" xmlns="http://www.w3.org/2000/svg">
+  {% if titulo %}<title id="{{ pref }}-t">Contraetiqueta de ejemplo de una cerveza</title>
+  <desc id="{{ pref }}-d">Etiqueta trasera inventada con las partes que conviene mirar: quién la elabora, la dirección, el lote y la fecha, los ingredientes y el registro sanitario.</desc>{% endif %}
+  <rect class="et-papel" x="0" y="0" width="360" height="540"/>
+  <g class="et-texto">
+    <text x="24" y="58" class="et-nombre">Cerveza especial</text>
+    <text x="24" y="84" class="et-sub">Ale de trigo sin filtrar</text>
+
+    <g class="zona" data-zona="ingredientes">
+      <rect class="zona-fondo" x="14" y="106" width="332" height="80"/>
+      <text x="24" y="130" class="et-p"><tspan font-weight="700">Ingredientes:&#160;</tspan>agua, malta de TRIGO,</text>
+      <text x="24" y="152" class="et-p">malta de CEBADA, lúpulo (Saaz)</text>
+      <text x="24" y="174" class="et-p">y levadura.</text>
+    </g>
+
+    <text x="24" y="238" class="et-grande">5,8 % vol</text>
+    <text x="336" y="238" class="et-grande" text-anchor="end">33 cl</text>
+
+    <g class="zona" data-zona="lote">
+      <rect class="zona-fondo" x="14" y="262" width="332" height="84"/>
+      <text x="24" y="288" class="et-lote">L 26-117</text>
+      <text x="24" y="311" class="et-p">Elaborada el 12/09/2026</text>
+      <text x="24" y="333" class="et-p">Consumir preferentemente antes de 09/2027</text>
+    </g>
+
+    <g class="zona" data-zona="elaborador">
+      <rect class="zona-fondo" x="14" y="364" width="332" height="58"/>
+      <text x="24" y="388" class="et-p">Elaborada y envasada por</text>
+      <text x="24" y="410" class="et-p" font-weight="700">Cervecera de Ejemplo, S. L.</text>
+    </g>
+
+    <g class="zona" data-zona="direccion">
+      <rect class="zona-fondo" x="14" y="424" width="332" height="52"/>
+      <text x="24" y="446" class="et-p">Calle del Ejemplo, 1</text>
+      <text x="24" y="468" class="et-p">00000 Villaejemplo (España)</text>
+    </g>
+
+    <g class="zona" data-zona="registro">
+      <rect class="zona-fondo" x="14" y="486" width="332" height="36"/>
+      <text x="24" y="510" class="et-p">RGSEAA 30.00000/X</text>
+    </g>
+  </g>
+</svg>
+{% endmacro %}

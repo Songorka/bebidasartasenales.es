@@ -1,11 +1,19 @@
+{%- macro enlaces() -%}
+<ul>
+  {%- for item in navegacion.principal %}
+  <li><a href="{{ item.url }}"{% if page.url.startsWith(item.url) %} aria-current="page"{% endif %}>{{ item.texto }}</a></li>
+  {%- endfor %}
+</ul>
+{%- endmacro -%}
 <a class="salto" href="#contenido">Saltar al contenido</a>
-<header class="encabezado">
-  <a class="marca" href="/" aria-label="Portada de {{ site.nombre }}">{{ site.nombre }}</a>
-  <nav aria-label="Principal" class="nav-principal">
-    <ul>
-      {% for item in navegacion.principal %}
-      <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.texto }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
+<header class="cabecera">
+  <a class="marca" href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>bebidas<br>artesanales.es</a>
+  <nav class="cabecera-nav" aria-label="Principal">{{ enlaces() }}</nav>
+  <details class="menu">
+    <summary>Menú</summary>
+    <nav aria-label="Principal en móvil">{{ enlaces() }}
+      <a class="boton" href="/comprueba-tu-botella/">Comprueba tu botella</a>
+    </nav>
+  </details>
+  <a class="boton cabecera-accion" href="/comprueba-tu-botella/">Comprueba tu botella</a>
 </header>
