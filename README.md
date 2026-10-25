@@ -47,6 +47,14 @@ Sirve para enseñar a un comprador cuántas visitas tiene la web.
 3. Completa el registro con tu correo y una contraseña.
 4. Dile a Claude Code: *"Mi código de GoatCounter es bebidasartesanales; actívalo y publica."*
    (Técnicamente: se escribe en `src/_data/site.json`, en `"goatcounter": ""`.)
+   **Ya hecho:** el código es `obigork` y está activo.
+
+**Recibir un resumen semanal por correo:**
+1. Entra en https://obigork.goatcounter.com con tu usuario.
+2. Arriba a la derecha, pulsa en tu nombre o correo y elige **Preferences** (o entra directamente en https://obigork.goatcounter.com/user/pref).
+3. Busca **Send email reports** y elige **Weekly**.
+4. Baja y pulsa **Save**.
+Te llegará un correo de GoatCounter cada semana con las visitas y las páginas más vistas (el día lo marca el primer envío).
 
 ### 4. Google Search Console (para que Google indexe la web)
 
