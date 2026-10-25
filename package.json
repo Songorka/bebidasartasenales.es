@@ -1,0 +1,22 @@
+{
+  "name": "bebidasartesanales.es",
+  "version": "0.1.0",
+  "description": "Web divulgativa sobre bebidas artesanales en España.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "node -e \"import('node:fs').then(f=>f.rmSync('_site',{recursive:true,force:true}))\"",
+    "lint": "node .claude/skills/design-taste-frontend/scripts/lint.mjs src",
+    "inspect": "node .claude/skills/design-taste-frontend/scripts/inspect.mjs _site/index.html",
+    "medios": "node scripts/medios.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "html-minifier-terser": "^7.2.0",
+    "markdown-it-anchor": "^9.2.0",
+    "sharp": "^0.35.5"
+  }
+}

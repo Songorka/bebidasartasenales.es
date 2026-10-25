@@ -1,0 +1,11 @@
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="encabezado">
+  <a class="marca" href="/" aria-label="Portada de {{ site.nombre }}">{{ site.nombre }}</a>
+  <nav aria-label="Principal" class="nav-principal">
+    <ul>
+      {% for item in navegacion.principal %}
+      <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.texto }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

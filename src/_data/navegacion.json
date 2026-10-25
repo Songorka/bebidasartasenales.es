@@ -1,0 +1,13 @@
+{
+  "principal": [
+    { "texto": "Cómo distinguirla", "url": "/como-distinguir/" },
+    { "texto": "Guía", "url": "/guia/" },
+    { "texto": "Mapa", "url": "/mapa/" },
+    { "texto": "Comprueba tu botella", "url": "/comprueba-tu-botella/" }
+  ],
+  "pie": [
+    { "texto": "Aviso legal", "url": "/aviso-legal/" },
+    { "texto": "Privacidad", "url": "/privacidad/" },
+    { "texto": "Créditos", "url": "/creditos/" }
+  ]
+}

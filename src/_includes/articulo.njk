@@ -1,0 +1,15 @@
+---
+layout: base.njk
+ogType: article
+---
+<article class="articulo">
+  <header class="articulo-cabecera">
+    <h1>{{ title }}</h1>
+    {% if entradilla %}<p class="entradilla">{{ entradilla }}</p>{% endif %}
+    <p class="meta">
+      {% if date %}<time datetime="{{ date | iso }}">{{ date | fecha }}</time>{% endif %}
+      {% if revisado %} · Última revisión: <time datetime="{{ revisado | iso }}">{{ revisado | fecha }}</time>{% endif %}
+    </p>
+  </header>
+  {{ content | safe }}
+</article>

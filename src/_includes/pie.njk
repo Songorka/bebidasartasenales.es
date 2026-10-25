@@ -1,0 +1,14 @@
+<footer class="pie">
+  <div class="pie-venta">
+    <p><strong>Este dominio está en venta.</strong> Escríbenos a <a href="mailto:{{ site.correo }}?subject=Compra%20del%20dominio%20{{ site.dominio }}">{{ site.correo }}</a>.</p>
+  </div>
+  <nav aria-label="Pie" class="nav-pie">
+    <ul>
+      {% for item in navegacion.pie %}
+      <li><a href="{{ item.url }}">{{ item.texto }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <p class="responsable">+18 · El consumo responsable es cosa tuya.</p>
+  <p class="legal">© {{ anio }} · {{ site.titular }}</p>
+</footer>

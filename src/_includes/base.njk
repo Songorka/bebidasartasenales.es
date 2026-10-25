@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="{{ site.idioma }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or site.titulo }}</title>
+  <meta name="description" content="{{ description or site.descripcion }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.nombre }}">
+  <meta property="og:title" content="{{ title or site.titulo }}">
+  <meta property="og:description" content="{{ description or site.descripcion }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification }}">{% endif %}
+  <link rel="stylesheet" href="/assets/css/estilo.css">
+  {% block head %}{% endblock %}
+  {% if site.goatcounter %}
+  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  {% endif %}
+</head>
+<body>
+  {% include "nav.njk" %}
+  <main id="contenido">
+    {{ content | safe }}
+  </main>
+  {% include "pie.njk" %}
+</body>
+</html>
