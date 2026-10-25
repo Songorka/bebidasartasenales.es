@@ -16,13 +16,13 @@ En cumplimiento del artículo 10 de la Ley 34/2002, de servicios de la sociedad 
 - **Titular:** {{ site.titular }}
 - **NIF:** {{ site.cif }}
 - **Domicilio:** {{ site.domicilio }}
-- **Correo electrónico:** [{{ site.correo }}](mailto:{{ site.correo }})
+- **Correo electrónico:** {% correo %}
 
 ## Qué es esta web
 
 bebidasartesanales.es es una web divulgativa. Explica cómo leer la etiqueta de una bebida y cómo distinguir una bebida artesanal de una que solo lo parece. No vende productos, no tiene tienda y no cobra a los productores por aparecer en el mapa.
 
-El dominio bebidasartesanales.es está en venta. Si te interesa, escribe a [{{ site.correo }}](mailto:{{ site.correo }}?subject=Compra%20del%20dominio%20bebidasartesanales.es).
+El dominio bebidasartesanales.es está en venta. Si te interesa, escribe a {% correo "", "Compra del dominio bebidasartesanales.es" %}.
 
 ## Contenido y responsabilidad
 

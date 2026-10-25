@@ -1,6 +1,16 @@
 // Común a todas las páginas. Todo el contenido se lee sin este script.
 (() => {
   const quieto = matchMedia("(prefers-reduced-motion: reduce)");
+
+  // Correo protegido: se monta aquí para que no aparezca escrito en el código de la página.
+  document.querySelectorAll("a[data-c]").forEach((a) => {
+    const dir = atob(a.dataset.c);
+    const q = [];
+    if (a.dataset.asunto) q.push("subject=" + encodeURIComponent(a.dataset.asunto));
+    if (a.dataset.cuerpo) q.push("body=" + encodeURIComponent(a.dataset.cuerpo));
+    a.href = "mailto:" + dir + (q.length ? "?" + q.join("&") : "");
+    if (a.hasAttribute("data-mostrar")) a.textContent = dir;
+  });
   const hayIO = "IntersectionObserver" in window;
 
   // Vídeos en bucle mudo: solo se cargan y reproducen a la vista y si no se pide menos movimiento.

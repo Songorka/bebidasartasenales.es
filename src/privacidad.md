@@ -34,4 +34,4 @@ Si nos escribes por correo electrónico (por ejemplo, para pedir que añadamos t
 - **Base legal:** tu consentimiento al escribirnos.
 - **Conservación:** el tiempo necesario para atender tu petición.
 - **Destinatarios:** no cedemos tus datos a nadie, salvo obligación legal.
-- **Tus derechos:** puedes pedir acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a [{{ site.correo }}](mailto:{{ site.correo }}). Si crees que no hemos atendido bien tu petición, puedes reclamar ante la [Agencia Española de Protección de Datos](https://www.aepd.es/).
+- **Tus derechos:** puedes pedir acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a {% correo %}. Si crees que no hemos atendido bien tu petición, puedes reclamar ante la [Agencia Española de Protección de Datos](https://www.aepd.es/).

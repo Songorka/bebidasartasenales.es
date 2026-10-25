@@ -85,6 +85,16 @@ export default function (eleventyConfig) {
       `${prioridad ? ' fetchpriority="high"' : ` loading="${carga}"`} decoding="async"></picture>`;
   }
 
+  // Correo protegido: la dirección va codificada y la monta el navegador (sitio.js).
+  eleventyConfig.addShortcode("correo", function (texto = "", asunto = "", cuerpo = "") {
+    const site = JSON.parse(fs.readFileSync(path.join("src", "_data", "site.json"), "utf8"));
+    const [usuario, dominio] = Buffer.from(site.correoCodificado, "base64").toString().split("@");
+    const visible = texto || `${usuario}<span class="correo-arroba"> (arroba) </span>${dominio.replace(".", " (punto) ")}`;
+    return `<a class="correo" href="/aviso-legal/#titular-de-la-web" data-c="${site.correoCodificado}"` +
+      (asunto ? ` data-asunto="${esc(asunto)}"` : "") + (cuerpo ? ` data-cuerpo="${esc(cuerpo)}"` : "") +
+      (texto ? "" : " data-mostrar") + `>${visible}</a>`;
+  });
+
   eleventyConfig.addShortcode("imagen", function (nombre, opciones = {}) {
     const img = leerMedios().imagenes[nombre];
     if (!img) throw new Error(`Imagen desconocida: ${nombre}`);

@@ -216,10 +216,10 @@ claseCuerpo: es-portada
   <div class="cierre-contacto">
     <h2 id="cierre-titulo" class="cierre-pregunta">¿Productor o comprador?</h2>
     <ul class="cierre-enlaces">
-      <li><a href="mailto:{{ site.correo }}?subject=Quiero%20aparecer%20en%20el%20mapa">Quiero aparecer en el mapa</a></li>
-      <li><a href="mailto:{{ site.correo }}?subject=Compra%20del%20dominio%20bebidasartesanales.es">Quiero comprar este dominio</a></li>
+      <li>{% correo "Quiero aparecer en el mapa", "Quiero aparecer en el mapa" %}</li>
+      <li>{% correo "Quiero comprar este dominio", "Compra del dominio bebidasartesanales.es" %}</li>
     </ul>
-    <p class="cierre-nota">Escribe a {{ site.correo }}. Respondemos en unos días.</p>
+    <p class="cierre-nota">Escribe a {% correo %}. Respondemos en unos días.</p>
   </div>
   </div>
 </section>

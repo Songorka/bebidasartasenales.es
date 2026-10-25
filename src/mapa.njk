@@ -96,7 +96,11 @@ migas:
       <figure class="mapa-foto" data-revelar="mascara">{% imagen "malta", { clase: "cubre", sizes: "(min-width: 60em) 36vw, 100vw" } %}</figure>
     </div>
     <p>Escríbenos con el nombre de tu obrador, tu localidad y tu web. Lo comprobamos y te añadimos. Solo publicamos el nombre, la localidad y la web.</p>
-    <a class="boton boton-claro" href="mailto:{{ site.correo }}?subject=Quiero%20aparecer%20en%20el%20mapa%20de%20bebidasartesanales.es&body=Nombre%20del%20productor%3A%0ALocalidad%3A%0AWeb%3A%0AQu%C3%A9%20elabor%C3%A1is%3A%0A">Escribir para aparecer</a>
+    {% correo "Escribir para aparecer", "Quiero aparecer en el mapa de bebidasartesanales.es", "Nombre del productor:
+Localidad:
+Web:
+Qué elaboráis:
+" %}
   </aside>
-  <p class="mapa-nota">Datos comprobados el {{ "2026-10-25" | fecha }}. Si ves un error, escríbenos a <a href="mailto:{{ site.correo }}?subject=Error%20en%20el%20mapa">{{ site.correo }}</a>. Mapa: <a href="https://leafletjs.com/">Leaflet</a> y © colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+  <p class="mapa-nota">Datos comprobados el {{ "2026-10-25" | fecha }}. Si ves un error, escríbenos a {% correo "", "Error en el mapa" %}. Mapa: <a href="https://leafletjs.com/">Leaflet</a> y © colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
 </article>
