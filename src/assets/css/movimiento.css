@@ -1,0 +1,52 @@
+/* Movimiento común. Todo estado oculto vive bajo .js y prefers-reduced-motion: no-preference:
+   sin script o con movimiento reducido, la página es la página terminada. */
+
+[data-revelar="mascara"], [data-revelar="asentar"] { overflow: clip; }
+[data-lines] .line { display: block; overflow: clip; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+[data-lines] .line > span { display: block; }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* sube: el bloque llega desde 24 px más abajo */
+  .js [data-revelar="sube"] { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-expo); }
+  .js [data-revelar="sube"].is-in { opacity: 1; transform: none; }
+
+  /* máscara: la imagen se abre desde abajo y se asienta desde una escala algo mayor */
+  .js [data-revelar="mascara"] { clip-path: inset(0 0 100% 0); transition: clip-path 1100ms var(--ease-in-out); }
+  .js [data-revelar="mascara"] img, .js [data-revelar="mascara"] video, .js [data-revelar="mascara"] svg { transform: scale(1.08); transition: transform 1400ms var(--ease-soft); }
+  .js [data-revelar="mascara"].is-in { clip-path: inset(0); }
+  .js [data-revelar="mascara"].is-in img, .js [data-revelar="mascara"].is-in video, .js [data-revelar="mascara"].is-in svg { transform: none; }
+
+  /* asentar: la imagen está siempre visible; solo se asienta desde una escala algo mayor */
+  .js [data-revelar="asentar"] img { opacity: .55; transform: scale(1.06); transition: opacity 900ms var(--ease-out), transform 1300ms var(--ease-soft); }
+  .js [data-revelar="asentar"].is-in img { opacity: 1; transform: none; }
+
+  /* fila: los hijos llegan uno a uno */
+  .js [data-revelar="fila"] > * { opacity: 0; transform: translateY(18px); transition: opacity 600ms var(--ease-out), transform 800ms var(--ease-expo); transition-delay: calc(var(--i, 0) * var(--stagger-item)); }
+  .js [data-revelar="fila"].is-in > * { opacity: 1; transform: none; }
+
+  /* líneas: cada línea sube desde su máscara */
+  .is-split .line > span { transform: translateY(110%); }
+  .is-split.is-in .line > span { transform: none; transition: transform 900ms var(--ease-expo) calc(var(--i, 0) * var(--stagger-line)); }
+
+  /* páginas de lectura: la banda se asienta al cargar y deriva al hacer scroll */
+  .js .doc-banda img { animation: asentar 1300ms var(--ease-expo) both; }
+  .js .doc-titulo { animation: llegar 800ms var(--ease-expo) 120ms both; }
+  .js .doc-lado-cabeza { animation: llegar 700ms var(--ease-out) 320ms both; }
+}
+@keyframes asentar { from { transform: scale(1.08); } to { transform: none; } }
+@keyframes llegar { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .doc-banda { overflow: clip; view-timeline-name: --banda; }
+    .doc-banda picture { display: block; height: 100%; animation: deriva linear both; animation-timeline: --banda; animation-range: exit 0% exit 100%; }
+  }
+}
+@keyframes deriva { to { transform: translateY(7%) scale(1.04); } }
+
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+::view-transition-old(root) { animation: vt-salir 180ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both; }
+::view-transition-new(root) { animation: vt-llegar 360ms var(--ease-out) 40ms both; }
+@keyframes vt-salir { to { opacity: 0; } }
+@keyframes vt-llegar { from { opacity: 0; transform: translateY(12px); } }

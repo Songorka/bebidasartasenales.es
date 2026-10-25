@@ -4,6 +4,7 @@
 <svg class="etiqueta {{ clase }}" viewBox="0 0 360 540" role="img" aria-labelledby="{{ pref }}-t {{ pref }}-d" xmlns="http://www.w3.org/2000/svg">
   {% if titulo %}<title id="{{ pref }}-t">Contraetiqueta de ejemplo de una cerveza</title>
   <desc id="{{ pref }}-d">Etiqueta trasera inventada con las partes que conviene mirar: quién la elabora, la dirección, el lote y la fecha, los ingredientes y el registro sanitario.</desc>{% endif %}
+  <g id="{{ pref }}-todo">
   <rect class="et-papel" x="0" y="0" width="360" height="540"/>
   <g class="et-texto">
     <text x="24" y="58" class="et-nombre">Cerveza especial</text>
@@ -42,6 +43,7 @@
       <rect class="zona-fondo" x="14" y="486" width="332" height="36"/>
       <text x="24" y="510" class="et-p">RGSEAA 30.00000/X</text>
     </g>
+  </g>
   </g>
 </svg>
 {% endmacro %}

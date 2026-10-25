@@ -1,7 +1,7 @@
 {#- "Comprueba tu botella". Sin JavaScript: preguntas con su explicación. Con JavaScript: responde y recibe un sello. -#}
 {%- from "svg/sello.njk" import sello -%}
 <form class="test" data-test novalidate>
-  <ol class="test-preguntas">
+  <ol class="test-preguntas" data-revelar="fila">
     {%- for p in test.preguntas %}
     <li class="test-pregunta">
       <fieldset>

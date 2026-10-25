@@ -13,29 +13,29 @@ claseCuerpo: es-portada
 {# 1 · Primera pantalla: mosaico y título en el eje #}
 <section class="portada" aria-labelledby="titulo">
   <div class="mosaico" data-mosaico>
-    <div class="tesela t-video">{% hueco "v1", { clase: "cubre", sizes: "(min-width: 48em) 34vw, 66vw", prioridad: true } %}</div>
-    <div class="tesela t-etiqueta campo-2">{{ etiqueta("et-portada", "etiqueta-tesela", false) }}</div>
-    <div class="tesela t-lupulo">{% imagen "lupulo", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
-    <div class="tesela t-negro campo-1"></div>
-    <div class="tesela t-cebada">{% imagen "cebada", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
-    <div class="tesela t-alambiques">{% imagen "alambiques", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
-    <div class="tesela t-gris superficie"></div>
-    <div class="tesela t-lupulino">{% imagen "lupulino", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
-    <div class="tesela t-campo campo-2"></div>
+    <div style="--i:0" class="tesela t-video">{% hueco "v1", { clase: "cubre", sizes: "(min-width: 48em) 34vw, 66vw", prioridad: true } %}</div>
+    <div style="--i:1" class="tesela t-etiqueta campo-2">{{ etiqueta("et-portada", "etiqueta-tesela", false) }}</div>
+    <div style="--i:2" class="tesela t-lupulo">{% imagen "lupulo", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
+    <div style="--i:3" class="tesela t-negro campo-1"></div>
+    <div style="--i:4" class="tesela t-cebada">{% imagen "cebada", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
+    <div style="--i:5" class="tesela t-alambiques">{% imagen "alambiques", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
+    <div style="--i:6" class="tesela t-gris superficie"></div>
+    <div style="--i:7" class="tesela t-lupulino">{% imagen "lupulino", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
+    <div style="--i:8" class="tesela t-campo campo-2"></div>
   </div>
 
   <div class="portada-texto">
-    <p class="portada-entradilla">Aprende a leer la etiqueta de una cerveza, un vermut o una kombucha y a saber quién la ha hecho de verdad.</p>
-    <h1 id="titulo" class="portada-titulo lineas"><span class="linea"><span data-linea>Artesana o</span></span> <span class="linea"><span data-linea>solo lo parece</span></span></h1>
-    <a class="boton portada-accion" href="/como-distinguir/">Cómo distinguirla</a>
+    <p class="portada-entradilla" data-carga style="--d:420ms">Aprende a leer la etiqueta de una cerveza, un vermut o una kombucha y a saber quién la ha hecho de verdad.</p>
+    <h1 id="titulo" class="portada-titulo lineas"><span class="linea"><span data-linea style="--i:0">Artesana o</span></span> <span class="linea"><span data-linea style="--i:1">solo lo parece</span></span></h1>
+    <a class="boton portada-accion" data-carga style="--d:520ms" href="/como-distinguir/">Cómo distinguirla</a>
   </div>
 
   <div class="declaracion">
-    <p class="declaracion-texto">La palabra «artesano» aparece igual en la botella de un obrador de tres personas que en la de una gran fábrica. La etiqueta, en cambio, tiene que decir quién responde de ella.</p>
-    <figure class="declaracion-foto">
+    <p class="declaracion-texto" data-lines>La palabra «artesano» aparece igual en la botella de un obrador de tres personas que en la de una gran fábrica. La etiqueta, en cambio, tiene que decir quién responde de ella.</p>
+    <figure class="declaracion-foto" data-revelar="mascara">
       {% hueco "g2", { clase: "cubre", sizes: "(min-width: 48em) 20vw, 62vw" } %}
     </figure>
-    <p class="declaracion-nota">En cerveza, la ley sí concreta qué es «de fabricación artesana»: todo el proceso en la misma instalación, con la intervención personal como factor principal y sin grandes series. <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2016-11952">Real Decreto 678/2016, art.&nbsp;3.4</a>.</p>
+    <p class="declaracion-nota" data-revelar="sube">En cerveza, la ley sí concreta qué es «de fabricación artesana»: todo el proceso en la misma instalación, con la intervención personal como factor principal y sin grandes series. <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2016-11952">Real Decreto 678/2016, art.&nbsp;3.4</a>.</p>
   </div>
 </section>
 
@@ -45,11 +45,12 @@ claseCuerpo: es-portada
     <div class="senales-fijo">{{ etiqueta("et-senales", "etiqueta-escena") }}</div>
   </div>
   <div class="senales-texto">
-    <h2 id="senales-titulo" class="titulo-seccion">Cinco cosas que mirar</h2>
+    <h2 id="senales-titulo" class="titulo-seccion" data-lines>Cinco cosas que mirar</h2>
     <p class="entradilla">Están en la etiqueta trasera, en letra pequeña. Con estas cinco ya sabes casi todo.</p>
     <ol class="senales-lista">
       {%- for s in senales %}
       <li class="senal" data-zona="{{ s.id }}">
+        <svg class="senal-recorte" viewBox="{{ s.recorte }}" aria-hidden="true" focusable="false"><use href="#et-senales-todo"/></svg>
         <h3>{{ s.titulo }}</h3>
         <p>{{ s.texto }}</p>
       </li>
@@ -61,7 +62,7 @@ claseCuerpo: es-portada
 
 {# 2b · Mosaico: lo que la ley exige #}
 <section class="ley" aria-labelledby="ley-titulo">
-  <div class="ley-mosaico">
+  <div class="ley-mosaico" data-revelar="fila">
     <div class="ley-t ley-cabeza superficie"><h2 id="ley-titulo" class="titulo-seccion">Lo que la ley exige</h2></div>
     <figure class="ley-t ley-foto">
       {% hueco "g4", { clase: "cubre", sizes: "(min-width: 48em) 50vw, 100vw" } %}
@@ -100,7 +101,7 @@ claseCuerpo: es-portada
     <h2 id="porpara-titulo" class="titulo-seccion">Marcas disfrazadas</h2>
     <p>Hay marcas con estética de obrador pequeño que fabrica un gran grupo o que se encargan a otra fábrica. No es ilegal. La diferencia suele estar en una sola palabra de la etiqueta.</p>
   </div>
-  <div class="porpara-especimenes">
+  <div class="porpara-especimenes" data-revelar="palabras">
     <figure class="especimen">
       <figcaption>Elaborado por…</figcaption>
       <div class="especimen-caja" aria-hidden="true"><span>por</span></div>
@@ -110,7 +111,7 @@ claseCuerpo: es-portada
       <div class="especimen-caja" aria-hidden="true"><span>para</span></div>
     </figure>
   </div>
-  <div class="porpara-etiquetas">
+  <div class="porpara-etiquetas" data-revelar="fila">
     <figure>
       {{ etiquetaReal("et-real") }}
       <figcaption>Quien hace la bebida firma con «por», da su localidad y la fecha.</figcaption>
@@ -126,7 +127,7 @@ claseCuerpo: es-portada
 {# 4 · Familias: pestañas y bandas #}
 <section class="familias" aria-labelledby="familias-titulo" data-pestanas>
   <div class="familias-cabeza">
-    <h2 id="familias-titulo" class="titulo-seccion">Cada bebida tiene sus pistas</h2>
+    <h2 id="familias-titulo" class="titulo-seccion" data-lines>Cada bebida tiene sus pistas</h2>
     <a class="boton" href="/guia/">Ver las guías</a>
   </div>
   <div class="familias-cuerpo">
@@ -142,9 +143,9 @@ claseCuerpo: es-portada
       {%- for f in familias %}
       <div class="panel" role="tabpanel" id="panel-{{ f.id }}" aria-labelledby="tab-{{ f.id }}" tabindex="0">
         <h3 class="panel-titulo">{{ f.nombre }}</h3>
-        <ul class="bandas">
+        <ul class="bandas" data-revelar="fila">
           {%- for p in f.pistas %}
-          <li class="banda">
+          <li class="banda" style="--i:{{ loop.index0 }}">
             <span class="banda-donde">{{ p.donde }}</span>
             <span class="banda-pista">{{ p.pista }}<span class="banda-nota">{{ p.nota }}</span></span>
           </li>
@@ -171,7 +172,7 @@ claseCuerpo: es-portada
     </ul>
   </div>
   <div class="mapa-principal">
-    <h2 id="mapa-titulo" class="titulo-seccion">Hechas cerca de ti</h2>
+    <h2 id="mapa-titulo" class="titulo-seccion" data-lines>Hechas cerca de ti</h2>
     <p>Productores reales de cerveza, vermut, destilados, kombucha y refrescos. Filtra por bebida y abre el mapa completo para ver cada uno.</p>
     <div class="filtros" role="group" aria-label="Filtrar por bebida" hidden>
       <button class="filtro" aria-pressed="true" data-filtro="todas">Todas</button>
@@ -179,13 +180,13 @@ claseCuerpo: es-portada
       <button class="filtro" aria-pressed="false" data-filtro="{{ f.id }}">{{ f.nombre }}</button>
       {%- endfor %}
     </div>
-    <svg class="mapa-svg" viewBox="{{ mapa.viewBox }}" role="img" aria-labelledby="mapa-svg-t" xmlns="http://www.w3.org/2000/svg">
+    <svg class="mapa-svg" data-revelar="puntos" viewBox="{{ mapa.viewBox }}" role="img" aria-labelledby="mapa-svg-t" xmlns="http://www.w3.org/2000/svg">
       <title id="mapa-svg-t">Mapa de España con {{ lista | length }} productores de bebidas artesanales</title>
       <rect class="mapa-canarias" x="{{ mapa.canarias.x }}" y="{{ mapa.canarias.y }}" width="{{ mapa.canarias.w }}" height="{{ mapa.canarias.h }}"/>
       <path class="mapa-tierra" d="{{ mapa.d }}"/>
       {%- for p in lista %}
       {%- set xy = p | proyectar %}
-      <circle class="punto" data-familia="{{ p.tipo | familiaDe }}" cx="{{ xy[0] }}" cy="{{ xy[1] }}" r="6"><title>{{ p.nombre }}, {{ p.localidad }}</title></circle>
+      <circle class="punto" style="--i:{{ loop.index0 }}" data-familia="{{ p.tipo | familiaDe }}" cx="{{ xy[0] }}" cy="{{ xy[1] }}" r="6"><title>{{ p.nombre }}, {{ p.localidad }}</title></circle>
       {%- endfor %}
     </svg>
     <a class="boton boton-tinta" href="/mapa/">Abrir el mapa completo</a>
@@ -194,7 +195,7 @@ claseCuerpo: es-portada
 
 {# 6 · Comprueba tu botella #}
 <section class="comprueba" aria-labelledby="comprueba-titulo">
-  <figure class="comprueba-figura">
+  <figure class="comprueba-figura" data-revelar="mascara">
     {%- if medios.huecos.g1.svg %}{% include "svg/botella.njk" %}{% else %}{% hueco "g1", { clase: "cubre", sizes: "(min-width: 48em) 30vw, 60vw" } %}{% endif %}
   </figure>
   <div class="comprueba-texto">
@@ -209,9 +210,9 @@ claseCuerpo: es-portada
 
 {# 7 · Cierre #}
 <section class="cierre" aria-labelledby="cierre-titulo">
-  <p class="cierre-frase">¿Haces cerveza, vermut, kombucha o refrescos y no estás en el mapa? Escríbenos con tu web y lo comprobamos.</p>
+  <p class="cierre-frase" data-lines>¿Haces cerveza, vermut, kombucha o refrescos y no estás en el mapa? Escríbenos con tu web y lo comprobamos.</p>
   <div class="cierre-derecha">
-  <figure class="cierre-foto">{% imagen "jengibre", { clase: "cubre", sizes: "170px" } %}</figure>
+  <figure class="cierre-foto" data-revelar="mascara">{% imagen "jengibre", { clase: "cubre", sizes: "170px" } %}</figure>
   <div class="cierre-contacto">
     <h2 id="cierre-titulo" class="cierre-pregunta">¿Productor o comprador?</h2>
     <ul class="cierre-enlaces">

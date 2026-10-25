@@ -9,7 +9,8 @@ migas:
   - { texto: "Inicio", url: "/" }
   - { texto: "Comprueba tu botella", url: "/comprueba-tu-botella/" }
 ---
-<article class="doc pagina-test">
+<article class="doc pagina-test con-banda">
+  <figure class="doc-banda">{% imagen "etiqueta-1910", { clase: "cubre", sizes: "100vw", prioridad: true, alt: "Etiquetas de cerveza de 1910 que nombran la cervecera y su ciudad" } %}</figure>
   <header class="doc-cabeza">
     <div class="doc-lado-cabeza">
       <p class="doc-entradilla">Coge la cerveza, el vermut o la kombucha que tengas a mano y dale la vuelta. Contesta mirando la etiqueta trasera.</p>
@@ -17,10 +18,19 @@ migas:
     <h1 class="doc-titulo">Comprueba tu botella</h1>
   </header>
   <div class="test-cuerpo">
-    <figure class="test-figura">
+    <figure class="test-figura" data-revelar="mascara">
       {%- if medios.huecos.g1.svg %}{% include "svg/botella.njk" %}{% else %}{% hueco "g1", { clase: "cubre", sizes: "(min-width: 60em) 38vw, 100vw" } %}{% endif %}
     </figure>
     {% include "test.njk" %}
   </div>
-  <p class="test-mas">¿Quieres entender cada pregunta a fondo? Lee <a href="/como-distinguir/senales/">las cinco señales</a> o llévate <a href="/como-distinguir/checklist/">la lista para el súper</a>.</p>
+  <section class="test-sigue" aria-labelledby="sigue-t">
+    <h2 id="sigue-t" class="titulo-seccion">Sigue con tu bebida</h2>
+    <ul class="test-sigue-lista" data-revelar="fila">
+      <li><a href="/cerveza/"><span class="test-sigue-foto">{% imagen "lupulo", { clase: "cubre", sizes: "(min-width: 60em) 19vw, 50vw", alt: "" } %}</span><span>Cerveza</span></a></li>
+      <li><a href="/vermut-y-destilados/"><span class="test-sigue-foto">{% imagen "artemisa", { clase: "cubre", sizes: "(min-width: 60em) 19vw, 50vw", alt: "" } %}</span><span>Vermut y destilados</span></a></li>
+      <li><a href="/sin-alcohol/"><span class="test-sigue-foto">{% imagen "kombucha", { clase: "cubre", sizes: "(min-width: 60em) 19vw, 50vw", alt: "" } %}</span><span>Sin alcohol</span></a></li>
+      <li><a href="/como-distinguir/senales/"><span class="test-sigue-foto">{% imagen "malta", { clase: "cubre", sizes: "(min-width: 60em) 19vw, 50vw", alt: "" } %}</span><span>Las cinco señales</span></a></li>
+    </ul>
+    <p class="test-mas">¿Prefieres llevarlo apuntado? Usa <a href="/como-distinguir/checklist/">la lista para el súper</a>.</p>
+  </section>
 </article>

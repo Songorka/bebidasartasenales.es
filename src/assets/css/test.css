@@ -9,7 +9,7 @@
 .test-pregunta legend { padding: 0; float: left; width: 100%; display: grid; gap: .25rem; }
 .test-pregunta legend + * { clear: both; }
 .test-texto { font-weight: 700; font-size: var(--step-lead); line-height: 1.25; letter-spacing: -0.01em; }
-.test-ayuda { color: var(--muted); font-size: var(--step-small); }
+.test-ayuda { font-size: var(--step-body); }
 .test-opciones { display: none; gap: 6px; }
 .test-opciones label { position: relative; flex: 1 1 0; max-width: 9rem; }
 .test-opciones input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
@@ -36,7 +36,14 @@
 .test-sello-texto p { font-size: var(--step-lead); line-height: 1.3; max-width: 32ch; margin-top: .75rem; }
 .test-nota { font-size: var(--step-small); }
 .test-otra { justify-self: start; min-height: 2.75rem; color: var(--ink); }
-.test-mas { margin-top: 3rem; max-width: 60ch; }
+.test-sigue { padding-top: var(--section); display: grid; gap: 1.5rem; }
+.test-sigue-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.test-sigue-lista a { display: grid; background: var(--surface); text-decoration: none; font-weight: 700; font-size: var(--step-lead); line-height: 1.15; }
+.test-sigue-lista a > span:last-child { padding: .9rem 1rem 1.1rem; }
+.test-sigue-foto { display: block; aspect-ratio: 4 / 3; overflow: clip; }
+.test-sigue-foto img { filter: grayscale(1) contrast(1.05); transition: transform 700ms var(--ease-soft); }
+@media (hover: hover) and (pointer: fine) { .test-sigue-lista a:hover img { transform: scale(1.04); } .test-sigue-lista a:hover > span:last-child { text-decoration: underline; } }
+.test-mas { max-width: 60ch; }
 .test-mas a { color: var(--accent); font-weight: 600; }
 
 .sello { font-family: var(--font); overflow: visible; }
@@ -66,5 +73,5 @@
 @media (min-width: 60em) {
   .test-cuerpo { grid-template-columns: 42fr 58fr; gap: 0; align-items: start; }
   .test-figura { position: sticky; top: 1.5rem; margin-right: 2.5rem; aspect-ratio: 4 / 5; }
-  .test-mas { margin-left: 42%; }
+  .test-sigue-lista { grid-template-columns: repeat(4, 1fr); }
 }

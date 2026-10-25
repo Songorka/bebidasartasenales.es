@@ -48,24 +48,38 @@ migas:
       {%- endfor %}
     </svg>
   </div>
-  <p class="mapa-leyenda" aria-hidden="true"><span class="ley-forma f-cerveza"></span> Cerveza <span class="ley-forma f-vermut-y-destilados"></span> Vermut y destilados <span class="ley-forma f-sin-alcohol"></span> Sin alcohol</p>
+  <p class="mapa-leyenda"><span class="ley-forma f-cerveza"></span> Cerveza <span class="ley-forma f-vermut-y-destilados"></span> Vermut y destilados <span class="ley-forma f-sin-alcohol"></span> Sin alcohol</p>
+
+  <section class="mapa-criterio" aria-labelledby="criterio-t">
+    <h2 id="criterio-t" class="titulo-seccion">Cómo los elegimos</h2>
+    <div class="mapa-criterio-texto">
+      <p>Cada productor de este mapa existe y tiene web propia: hemos comprobado en ella su nombre y su localidad. Buscamos obradores pequeños e independientes de cerveza, vermut, destilados, kombucha y refrescos, y dejamos fuera las marcas que pertenecen a grandes grupos de bebidas.</p>
+      <p>Solo publicamos datos públicos de empresa: el nombre comercial, la localidad y la web. El punto del mapa marca el centro de la localidad, no la dirección del obrador. Que alguien no aparezca no significa nada: el mapa crece con el tiempo y cualquier productor puede pedir entrar.</p>
+    </div>
+  </section>
 
   <section class="mapa-lista" aria-labelledby="lista-t">
     <h2 id="lista-t" class="titulo-seccion">Todos los productores</h2>
+    <div class="mapa-grupos">
     {%- for g in porComunidad %}
     <div class="mapa-grupo" data-grupo="{{ g.clave }}">
-      <h3 class="mapa-grupo-titulo">{{ g.clave }}</h3>
-      <ul>
-        {%- for p in g.items %}
-        <li class="productor" data-familia="{{ p.tipo | familiaDe }}" data-comunidad="{{ p.comunidad }}"
-            data-lat="{{ p.lat }}" data-lng="{{ p.lng }}" data-nombre="{{ p.nombre }}" data-localidad="{{ p.localidad }}" data-web="{{ p.web }}" data-tipo="{{ p.tipo | nombreTipo }}">
-          <a href="{{ p.web }}" rel="noopener" class="productor-nombre">{{ p.nombre }}</a>
-          <span class="productor-dato">{{ p.tipo | nombreTipo }}. {{ p.localidad }} ({{ p.provincia }})</span>
-        </li>
-        {%- endfor %}
-      </ul>
+      <table class="mapa-tabla">
+        <caption>{{ g.clave }}</caption>
+        <thead><tr><th scope="col">Productor</th><th scope="col">Bebida</th><th scope="col" class="der">Localidad</th></tr></thead>
+        <tbody>
+          {%- for p in g.items %}
+          <tr class="productor" data-familia="{{ p.tipo | familiaDe }}" data-comunidad="{{ p.comunidad }}"
+              data-lat="{{ p.lat }}" data-lng="{{ p.lng }}" data-nombre="{{ p.nombre }}" data-localidad="{{ p.localidad }}" data-web="{{ p.web }}" data-tipo="{{ p.tipo | nombreTipo }}">
+            <th scope="row"><a href="{{ p.web }}" rel="noopener">{{ p.nombre }}</a></th>
+            <td>{{ p.tipo | nombreTipo }}</td>
+            <td class="der">{{ p.localidad }} ({{ p.provincia }})</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
     </div>
     {%- endfor %}
+    </div>
   </section>
 
   <aside class="mapa-alta campo-1" aria-labelledby="alta-t">

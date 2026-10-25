@@ -16,7 +16,8 @@
 .mapa-canarias { fill: none; stroke: var(--ink); stroke-width: 3; }
 .punto { fill: var(--ink); stroke: var(--field-2); stroke-width: 2; }
 .mapa-lienzo .leaflet-tile-pane { filter: grayscale(1) contrast(.95) brightness(1.04); }
-.mapa-lienzo .leaflet-container { font-family: var(--font); }
+.mapa-lienzo .leaflet-container, .mapa-lienzo .leaflet-container * { font-family: var(--font) !important; }
+.mapa-lienzo .leaflet-control-attribution { font-size: 13px; }
 
 .marca-mapa { background: var(--ink); border: 3px solid #fff; transition: transform var(--t-press) var(--ease-out); }
 .marca-mapa.f-cerveza { border-radius: 50%; }
@@ -28,33 +29,42 @@
 .mapa-popup a { color: var(--accent); font-weight: 600; }
 .leaflet-popup-content-wrapper, .leaflet-popup-tip { border-radius: 0; } /* taste-skill-ignore: ventana flotante del mapa */
 
-.mapa-leyenda { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .75rem; font-size: var(--step-small); }
+.mapa-leyenda { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .75rem; }
 .ley-forma { display: inline-block; width: 14px; height: 14px; background: var(--ink); margin-left: .75rem; }
 .ley-forma:first-child { margin-left: 0; }
 .ley-forma.f-cerveza { border-radius: 50%; }
 .ley-forma.f-sin-alcohol { border-radius: 50%; background: var(--accent); }
 
+.mapa-criterio { margin-top: var(--section); display: grid; gap: 1.5rem; }
+.mapa-criterio-texto { display: grid; gap: 1rem; max-width: 62ch; }
 .mapa-lista { margin-top: var(--section); display: grid; gap: 2.5rem; }
+.mapa-grupos { display: grid; gap: 2.5rem; }
 .mapa-grupo[hidden], .productor[hidden] { display: none; }
-.mapa-grupo-titulo { font-size: var(--step-lead); margin-bottom: .75rem; }
-.mapa-grupo ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
-.productor { display: grid; gap: .1rem; background: var(--surface); padding: .85rem 1rem; }
-.productor:nth-child(even) { background: var(--surface-2); }
-.productor-nombre { font-weight: 700; color: var(--ink); }
-.productor-dato { font-size: var(--step-small); color: var(--muted); }
+.mapa-tabla { width: 100%; border-collapse: collapse; font-size: var(--step-body); }
+.mapa-tabla caption { text-align: left; font-weight: 700; font-size: var(--step-lead); letter-spacing: -0.01em; padding-bottom: .5rem; }
+.mapa-tabla thead th { font-size: var(--step-small); font-weight: 600; color: var(--muted); text-align: left; padding: .4rem .75rem; }
+.mapa-tabla tbody tr:nth-child(odd) { background: var(--surface); }
+.mapa-tabla th[scope="row"], .mapa-tabla td { text-align: left; padding: .7rem .75rem; vertical-align: top; }
+.mapa-tabla th[scope="row"] { font-weight: 700; }
+.mapa-tabla a { color: var(--ink); }
+.mapa-tabla .der { text-align: right; }
+@media (max-width: 40em) {
+  .mapa-tabla thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .mapa-tabla tr { display: grid; padding: .6rem .75rem; }
+  .mapa-tabla th[scope="row"], .mapa-tabla td { padding: 0; }
+}
 
 .mapa-alta { margin: var(--section) calc(var(--margin) * -1) 0; padding: clamp(3.5rem, 7vw, 6rem) var(--margin); display: grid; gap: 1.25rem; justify-items: start; }
 .mapa-alta p { max-width: 44ch; font-size: var(--step-lead); line-height: 1.3; }
 .boton-claro { background: var(--field-2); color: var(--ink); }
 @media (hover: hover) and (pointer: fine) { .boton-claro:hover { background: #fff; } }
-.mapa-nota { margin-top: 2rem; font-size: var(--step-small); color: var(--muted); max-width: 70ch; }
+.mapa-nota { margin-top: 2rem; max-width: 70ch; }
 .mapa-nota a { color: var(--ink); }
 
-@media (min-width: 48em) {
-  .mapa-lista { grid-template-columns: 42fr 58fr; column-gap: 0; }
-  .mapa-lista > .titulo-seccion { grid-column: 1; grid-row: 1 / span 30; align-self: start; position: sticky; top: 1.5rem; padding-right: 2.5rem; }
-  .mapa-grupo { grid-column: 2; }
-  .mapa-grupo ul { grid-template-columns: 1fr 1fr; }
+@media (min-width: 60em) {
+  .mapa-criterio, .mapa-lista { grid-template-columns: 42fr 58fr; column-gap: 0; }
+  .mapa-criterio .titulo-seccion, .mapa-lista > .titulo-seccion { padding-right: 2.5rem; }
+  .mapa-grupos { display: grid; gap: 2.5rem; }
 }
 @media (min-width: 60em) {
   .mapa-alta { grid-template-columns: 42fr 58fr; column-gap: 0; align-items: end; }

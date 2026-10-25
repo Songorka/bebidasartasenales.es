@@ -15,6 +15,7 @@
         t.setAttribute("aria-selected", String(activa));
         t.tabIndex = activa ? 0 : -1;
         paneles[j].hidden = !activa;
+        paneles[j].classList.toggle("recien", activa && foco !== undefined);
       });
       if (foco) tabs[i].focus();
     };
@@ -28,7 +29,7 @@
         if (e.key === "End") { e.preventDefault(); elegir(n - 1, true); }
       });
     });
-    elegir(0, false);
+    elegir(0);
   }
 
   // ---------- filtros del mapa ----------
@@ -57,14 +58,20 @@
   if (escena && "IntersectionObserver" in window) {
     const zonas = [...escena.querySelectorAll(".etiqueta-escena .zona")];
     const senales = [...escena.querySelectorAll(".senal")];
+    const etiqueta = escena.querySelector(".etiqueta-escena");
+    const alto = etiqueta.viewBox.baseVal.height;
+    const centro = {};
+    zonas.forEach((z) => { const r = z.querySelector(".zona-fondo").getBBox(); centro[z.dataset.zona] = ((r.y + r.height / 2) / alto) * 100; });
     const activar = (id) => {
       zonas.forEach((z) => z.classList.toggle("activa", z.dataset.zona === id));
       senales.forEach((s) => s.classList.toggle("activa", s.dataset.zona === id));
-      escena.dataset.zonaActiva = id || "";
+      escena.classList.toggle("con-zona", Boolean(id));
+      if (id) etiqueta.style.setProperty("--zy", centro[id].toFixed(1) + "%");
     };
     const io = new IntersectionObserver((entradas) => {
       for (const e of entradas) if (e.isIntersecting) activar(e.target.dataset.zona);
     }, { rootMargin: "-45% 0px -45% 0px" });
     senales.forEach((s) => io.observe(s));
+    new IntersectionObserver(([e]) => { if (!e.isIntersecting) activar(null); }).observe(escena);
   }
 })();
