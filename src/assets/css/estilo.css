@@ -1,16 +1,48 @@
-/* Hoja de estilos neutra provisional. La paleta y la tipografía propias llegan en la Fase 1. */
 @import "tokens.css";
 
+/* ---------- reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
-  font-family: system-ui, sans-serif;
-  color: var(--tinta, #111);
-  background: var(--fondo, #fff);
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--step-body);
   line-height: 1.5;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
 }
-.salto { position: absolute; left: -9999px; }
-.salto:focus { left: 1rem; top: 1rem; background: #000; color: #fff; padding: .5rem .75rem; }
-.encabezado, .pie { padding: 1rem 1.25rem; }
-.nav-principal ul, .nav-pie ul { list-style: none; display: flex; gap: 1rem; padding: 0; margin: 0; flex-wrap: wrap; }
+h1, h2, h3, h4, p, figure, blockquote, ul, ol, dl, dd { margin: 0; }
+ul[class], ol[class] { padding: 0; list-style: none; }
+img, video, svg { display: block; max-width: 100%; }
+img, video { height: auto; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
 a { color: inherit; }
+:target { scroll-margin-top: 5rem; }
+::selection { background: var(--field-2); color: var(--field-2-ink); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- tipografía ---------- */
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+p { text-wrap: pretty; }
+.nums { font-variant-numeric: tabular-nums; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ---------- controles ---------- */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 3rem; padding: 0 1.5rem;
+  background: var(--accent); color: var(--accent-ink);
+  border-radius: var(--radius); text-decoration: none; font-weight: 600;
+  transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease;
+}
+.boton:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) { .boton:hover { background: var(--ink); } }
+
+/* ---------- salto y encabezado (provisional, se diseña en la Fase 2) ---------- */
+.salto { position: absolute; left: var(--margin); top: -4rem; background: var(--ink); color: var(--bg); padding: .6rem .9rem; z-index: 10; }
+.salto:focus { top: .5rem; }
+.encabezado, .pie { padding: 1rem var(--margin); }
+.nav-principal ul, .nav-pie ul { display: flex; gap: 1rem; flex-wrap: wrap; }
