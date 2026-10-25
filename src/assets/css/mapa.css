@@ -1,0 +1,63 @@
+/* Página del mapa */
+.mapa-controles { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem 1.5rem; margin-top: clamp(2rem, 5vw, 3.5rem); }
+.mapa-controles[hidden] { display: none; }
+.filtros { display: flex; flex-wrap: wrap; gap: 6px; }
+.filtro { min-height: 2.75rem; padding: 0 1rem; background: var(--surface); font-weight: 600; transition: background-color var(--t-ui) ease, color var(--t-ui) ease, transform var(--t-press) var(--ease-out); }
+.filtro:active { transform: scale(0.97); }
+.filtro[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.mapa-comunidad { display: grid; gap: .25rem; font-weight: 600; font-size: var(--step-small); }
+.mapa-comunidad select { min-height: 2.75rem; padding: 0 .75rem; background: var(--surface); border: 0; font-size: var(--step-body); font-weight: 500; }
+.mapa-estado { font-weight: 600; margin-left: auto; }
+
+.mapa-lienzo { margin-top: 1rem; height: min(74svh, 46rem); min-height: 22rem; display: grid; place-items: center; padding: 1.5rem; }
+.mapa-lienzo .mapa-svg { height: 100%; width: auto; max-width: 100%; }
+.mapa-lienzo.con-leaflet { display: block; padding: 0; background: var(--surface); }
+.mapa-tierra { fill: #fff; }
+.mapa-canarias { fill: none; stroke: var(--ink); stroke-width: 3; }
+.punto { fill: var(--ink); stroke: var(--field-2); stroke-width: 2; }
+.mapa-lienzo .leaflet-tile-pane { filter: grayscale(1) contrast(.95) brightness(1.04); }
+.mapa-lienzo .leaflet-container { font-family: var(--font); }
+
+.marca-mapa { background: var(--ink); border: 3px solid #fff; transition: transform var(--t-press) var(--ease-out); }
+.marca-mapa.f-cerveza { border-radius: 50%; }
+.marca-mapa.f-vermut-y-destilados { border-radius: 0; }
+.marca-mapa.f-sin-alcohol { background: var(--accent); border-radius: 50%; }
+.marca-mapa:hover, .marca-mapa:focus-visible { transform: scale(1.25); }
+.mapa-popup { display: grid; gap: .2rem; font-size: 15px; }
+.mapa-popup strong { font-size: 17px; }
+.mapa-popup a { color: var(--accent); font-weight: 600; }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { border-radius: 0; } /* taste-skill-ignore: ventana flotante del mapa */
+
+.mapa-leyenda { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .75rem; font-size: var(--step-small); }
+.ley-forma { display: inline-block; width: 14px; height: 14px; background: var(--ink); margin-left: .75rem; }
+.ley-forma:first-child { margin-left: 0; }
+.ley-forma.f-cerveza { border-radius: 50%; }
+.ley-forma.f-sin-alcohol { border-radius: 50%; background: var(--accent); }
+
+.mapa-lista { margin-top: var(--section); display: grid; gap: 2.5rem; }
+.mapa-grupo[hidden], .productor[hidden] { display: none; }
+.mapa-grupo-titulo { font-size: var(--step-lead); margin-bottom: .75rem; }
+.mapa-grupo ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.productor { display: grid; gap: .1rem; background: var(--surface); padding: .85rem 1rem; }
+.productor:nth-child(even) { background: var(--surface-2); }
+.productor-nombre { font-weight: 700; color: var(--ink); }
+.productor-dato { font-size: var(--step-small); color: var(--muted); }
+
+.mapa-alta { margin: var(--section) calc(var(--margin) * -1) 0; padding: clamp(3.5rem, 7vw, 6rem) var(--margin); display: grid; gap: 1.25rem; justify-items: start; }
+.mapa-alta p { max-width: 44ch; font-size: var(--step-lead); line-height: 1.3; }
+.boton-claro { background: var(--field-2); color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { .boton-claro:hover { background: #fff; } }
+.mapa-nota { margin-top: 2rem; font-size: var(--step-small); color: var(--muted); max-width: 70ch; }
+.mapa-nota a { color: var(--ink); }
+
+@media (min-width: 48em) {
+  .mapa-lista { grid-template-columns: 42fr 58fr; column-gap: 0; }
+  .mapa-lista > .titulo-seccion { grid-column: 1; grid-row: 1 / span 30; align-self: start; position: sticky; top: 1.5rem; padding-right: 2.5rem; }
+  .mapa-grupo { grid-column: 2; }
+  .mapa-grupo ul { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 60em) {
+  .mapa-alta { grid-template-columns: 42fr 58fr; column-gap: 0; align-items: end; }
+  .mapa-alta .titulo-seccion { grid-row: 1 / 3; align-self: start; padding-right: 2.5rem; }
+  .mapa-alta p, .mapa-alta .boton { grid-column: 2; }
+}

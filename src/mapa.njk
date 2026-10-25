@@ -1,0 +1,77 @@
+---
+layout: base.njk
+title: Mapa de productores
+description: "Mapa de productores reales de cerveza, vermut, destilados, kombucha y refrescos artesanos de España, comprobados uno a uno. Filtra por bebida y comunidad."
+permalink: /mapa/
+css: [mapa]
+js: [mapa]
+migas:
+  - { texto: "Inicio", url: "/" }
+  - { texto: "Mapa", url: "/mapa/" }
+---
+{%- set lista = productores or [] -%}
+{%- set porComunidad = lista | agruparPor("comunidad") -%}
+<article class="doc pagina-mapa">
+  <header class="doc-cabeza">
+    <div class="doc-lado-cabeza">
+      <p class="doc-entradilla">{{ lista | length }} productores de {{ porComunidad | length }} comunidades. Cada uno, comprobado en su propia web.</p>
+    </div>
+    <h1 class="doc-titulo">Hechas cerca de ti</h1>
+  </header>
+
+  <div class="mapa-controles" data-controles hidden>
+    <div class="filtros" role="group" aria-label="Filtrar por bebida">
+      <button class="filtro" aria-pressed="true" data-filtro="todas">Todas</button>
+      {%- for f in familias %}
+      <button class="filtro" aria-pressed="false" data-filtro="{{ f.id }}">{{ f.nombre }}</button>
+      {%- endfor %}
+    </div>
+    <label class="mapa-comunidad">
+      <span>Comunidad</span>
+      <select data-comunidad>
+        <option value="">Todas</option>
+        {%- for g in porComunidad %}
+        <option value="{{ g.clave }}">{{ g.clave }}</option>
+        {%- endfor %}
+      </select>
+    </label>
+    <p class="mapa-estado" aria-live="polite"><span data-recuento>{{ lista | length }}</span> productores a la vista</p>
+  </div>
+
+  <div class="mapa-lienzo campo-2" data-mapa-lienzo>
+    <svg class="mapa-svg" viewBox="{{ mapa.viewBox }}" role="img" aria-labelledby="mapa-svg-t" xmlns="http://www.w3.org/2000/svg">
+      <title id="mapa-svg-t">Mapa de España con {{ lista | length }} productores</title>
+      <rect class="mapa-canarias" x="{{ mapa.canarias.x }}" y="{{ mapa.canarias.y }}" width="{{ mapa.canarias.w }}" height="{{ mapa.canarias.h }}"/>
+      <path class="mapa-tierra" d="{{ mapa.d }}"/>
+      {%- for p in lista %}{% set xy = p | proyectar %}
+      <circle class="punto" cx="{{ xy[0] }}" cy="{{ xy[1] }}" r="6"/>
+      {%- endfor %}
+    </svg>
+  </div>
+  <p class="mapa-leyenda" aria-hidden="true"><span class="ley-forma f-cerveza"></span> Cerveza <span class="ley-forma f-vermut-y-destilados"></span> Vermut y destilados <span class="ley-forma f-sin-alcohol"></span> Sin alcohol</p>
+
+  <section class="mapa-lista" aria-labelledby="lista-t">
+    <h2 id="lista-t" class="titulo-seccion">Todos los productores</h2>
+    {%- for g in porComunidad %}
+    <div class="mapa-grupo" data-grupo="{{ g.clave }}">
+      <h3 class="mapa-grupo-titulo">{{ g.clave }}</h3>
+      <ul>
+        {%- for p in g.items %}
+        <li class="productor" data-familia="{{ p.tipo | familiaDe }}" data-comunidad="{{ p.comunidad }}"
+            data-lat="{{ p.lat }}" data-lng="{{ p.lng }}" data-nombre="{{ p.nombre }}" data-localidad="{{ p.localidad }}" data-web="{{ p.web }}" data-tipo="{{ p.tipo | nombreTipo }}">
+          <a href="{{ p.web }}" rel="noopener" class="productor-nombre">{{ p.nombre }}</a>
+          <span class="productor-dato">{{ p.tipo | nombreTipo }}. {{ p.localidad }} ({{ p.provincia }})</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+  </section>
+
+  <aside class="mapa-alta campo-1" aria-labelledby="alta-t">
+    <h2 id="alta-t" class="titulo-seccion">¿Haces bebidas y no apareces?</h2>
+    <p>Escríbenos con el nombre de tu obrador, tu localidad y tu web. Lo comprobamos y te añadimos. Solo publicamos el nombre, la localidad y la web.</p>
+    <a class="boton boton-claro" href="mailto:{{ site.correo }}?subject=Quiero%20aparecer%20en%20el%20mapa%20de%20bebidasartesanales.es&body=Nombre%20del%20productor%3A%0ALocalidad%3A%0AWeb%3A%0AQu%C3%A9%20elabor%C3%A1is%3A%0A">Escribir para aparecer</a>
+  </aside>
+  <p class="mapa-nota">Datos comprobados el {{ "2026-10-25" | fecha }}. Si ves un error, escríbenos a <a href="mailto:{{ site.correo }}?subject=Error%20en%20el%20mapa">{{ site.correo }}</a>. Mapa: <a href="https://leafletjs.com/">Leaflet</a> y © colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+</article>

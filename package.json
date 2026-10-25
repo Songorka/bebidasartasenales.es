@@ -18,5 +18,8 @@
     "html-minifier-terser": "^7.2.0",
     "markdown-it-anchor": "^9.2.0",
     "sharp": "^0.35.5"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
   }
 }
