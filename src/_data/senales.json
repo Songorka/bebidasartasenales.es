@@ -4,34 +4,39 @@
     "titulo": "Quién la elabora",
     "texto": "Busca «elaborado por». Si solo pone «envasado para» o «distribuido por», quien firma la vende, pero quizá no la hace.",
     "ancla": "quien-la-elabora",
-    "recorte": "4 354 352 78"
+    "recorte": "4 354 352 78",
+    "cita": "Elaborada y envasada por Cervecera de Ejemplo, S. L."
   },
   {
     "id": "direccion",
     "titulo": "Dónde se hace",
     "texto": "Una localidad concreta y una dirección. Si la marca presume de pueblo y la dirección es un polígono a cientos de kilómetros, ya tienes una pista.",
     "ancla": "donde-se-hace",
-    "recorte": "4 414 352 72"
+    "recorte": "4 414 352 72",
+    "cita": "Calle del Ejemplo, 1. 00000 Villaejemplo (España)"
   },
   {
     "id": "lote",
     "titulo": "El lote",
     "texto": "Casi toda bebida envasada lleva un lote: la «L» con un código. Algunas pequeñas añaden la fecha de elaboración o el número de cocción. Eso es seguimiento de verdad.",
     "ancla": "el-lote",
-    "recorte": "4 252 352 104"
+    "recorte": "4 252 352 104",
+    "cita": "L 26-117. Elaborada el 12/09/2026"
   },
   {
     "id": "ingredientes",
     "titulo": "Los ingredientes",
     "texto": "En cerveza y destilados de más de 1,2 % no es obligatorio listarlos; el vermut sí debe hacerlo desde 2023. Si una cerveza o una ginebra los enumera con detalle, es una decisión, no un trámite.",
     "ancla": "los-ingredientes",
-    "recorte": "4 96 352 100"
+    "recorte": "4 96 352 100",
+    "cita": "Ingredientes: agua, malta de TRIGO, malta de CEBADA, lúpulo (Saaz) y levadura."
   },
   {
     "id": "registro",
     "titulo": "Quién hay detrás",
     "texto": "El nombre de la empresa se puede buscar en registros públicos. Si la etiqueta trae número de registro sanitario, el registro de AESAN dice si ese sitio fabrica la bebida o solo la envasa.",
     "ancla": "quien-hay-detras",
-    "recorte": "4 476 352 56"
+    "recorte": "4 476 352 56",
+    "cita": "RGSEAA 30.00000/X"
   }
 ]

@@ -33,6 +33,8 @@
   // Las imágenes del texto de lectura se abren desde una máscara; las listas de enlaces entran fila a fila.
   document.querySelectorAll(".prosa figure, .indice-guia .familia-foto, .articulo-foto").forEach((f) => { f.dataset.revelar = "asentar"; });
   document.querySelectorAll(".lista-articulos, .familias-lista").forEach((l) => { l.dataset.revelar = "fila"; });
+  document.querySelectorAll(".prosa h2, .prosa h3").forEach((h) => { h.dataset.revelar = "sube"; });
+  document.querySelectorAll(".doc-indice ol").forEach((l) => { l.dataset.revelar = "fila"; });
 
   // Revelados: una sola vez, cuando el bloque entra por abajo.
   const revelar = [...document.querySelectorAll("[data-revelar]")];
@@ -44,7 +46,7 @@
   } else {
     const io = new IntersectionObserver((entradas) => {
       for (const e of entradas) if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
-    }, { rootMargin: "0px 0px -6% 0px", threshold: 0 });
+    }, { rootMargin: "0px 0px 0px 0px", threshold: 0 });
     revelar.forEach((el) => io.observe(el));
   }
 
@@ -89,7 +91,7 @@
         const ultima = e.target.querySelector(".line:last-of-type > span");
         if (ultima) ultima.addEventListener("transitionend", () => devolver(e.target), { once: true });
       }
-    }, { rootMargin: "0px 0px -10% 0px" });
+    }, { rootMargin: "0px 0px 0px 0px" });
     document.fonts.ready.then(() => lineas.forEach((el) => { partir(el); io.observe(el); }));
     let ancho = innerWidth;
     addEventListener("resize", () => {

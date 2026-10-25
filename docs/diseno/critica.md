@@ -34,3 +34,16 @@ Top three problems (most visible first), each with the screenshot it shows in an
 2. En la portada, las teselas negra y gris del mosaico siguen siendo planas → valorar sustituir la gris por G3 cuando exista.
 3. El mapa estático de la página /mapa/ queda bajo la línea de la primera pantalla en 1440×900 → aceptable (el título y los filtros mandan); revisar si se añade V2.
 ```
+
+```
+ROUND 3 — Auditoría UX pedida por el propietario («muchos espacios en blanco», «¿fondo blanco estático?»)
+Seen in one second: igual que la ronda 2, pero la página respira menos y cambia de color por capítulos.
+Problemas encontrados: señales de 60svh con un párrafo pequeño (≈3 pantallas casi vacías); separación de secciones ≈210px + rellenos;
+  declaración en columna estrecha entre vacíos; cierre con hueco central; fondo blanco continuo sin ritmo.
+Cambios: --section a clamp(5rem, 8.5vw, 8.5rem); señales a 40svh con titular mayor, texto a tamaño de entradilla y la frase literal de la
+  etiqueta como prueba (en móvil, el recorte de la etiqueta); declaración más grande con la foto G2 a su altura; capítulos de color con cortes
+  limpios: por/para en negro, mapa en verde lúpulo, «Comprueba tu botella» en gris; cierre compacto; revelados que arrancan en cuanto asoman.
+Fondo: se mantiene el blanco como «papel» de lectura (es la idea: la etiqueta), con capítulos de color para el ritmo. Sin degradados.
+Scores: design 8.5 · usability 8.5 · creativity 8 · content 8 → overall 8.3
+Caps applied: ninguno (0 FAIL a 1440, 768 y 390).
+```

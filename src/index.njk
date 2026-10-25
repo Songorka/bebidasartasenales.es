@@ -31,7 +31,7 @@ claseCuerpo: es-portada
   </div>
 
   <div class="declaracion">
-    <p class="declaracion-texto" data-lines>La palabra «artesano» aparece igual en la botella de un obrador de tres personas que en la de una gran fábrica. La etiqueta, en cambio, tiene que decir quién responde de ella.</p>
+    <p class="declaracion-texto" data-lines>«Artesano» sale igual en la botella de un obrador de tres personas que en la de una gran fábrica. La etiqueta, no: tiene que decir quién responde.</p>
     <figure class="declaracion-foto" data-revelar="mascara">
       {% hueco "g2", { clase: "cubre", sizes: "(min-width: 48em) 20vw, 62vw" } %}
     </figure>
@@ -52,6 +52,7 @@ claseCuerpo: es-portada
       <li class="senal" data-zona="{{ s.id }}">
         <svg class="senal-recorte" viewBox="{{ s.recorte }}" aria-hidden="true" focusable="false"><use href="#et-senales-todo"/></svg>
         <h3>{{ s.titulo }}</h3>
+        <p class="senal-cita"><span>{{ s.cita }}</span></p>
         <p>{{ s.texto }}</p>
       </li>
       {%- endfor %}
@@ -96,7 +97,7 @@ claseCuerpo: es-portada
 </section>
 
 {# 3 · Por / para #}
-<section class="porpara" aria-labelledby="porpara-titulo">
+<section class="porpara capitulo-negro" aria-labelledby="porpara-titulo">
   <div class="porpara-cabeza">
     <h2 id="porpara-titulo" class="titulo-seccion">Marcas disfrazadas</h2>
     <p>Hay marcas con estética de obrador pequeño que fabrica un gran grupo o que se encargan a otra fábrica. No es ilegal. La diferencia suele estar en una sola palabra de la etiqueta.</p>
@@ -194,7 +195,7 @@ claseCuerpo: es-portada
 </section>
 
 {# 6 · Comprueba tu botella #}
-<section class="comprueba" aria-labelledby="comprueba-titulo">
+<section class="comprueba capitulo-gris" aria-labelledby="comprueba-titulo">
   <figure class="comprueba-figura" data-revelar="mascara">
     {%- if medios.huecos.g1.svg %}{% include "svg/botella.njk" %}{% else %}{% hueco "g1", { clase: "cubre", sizes: "(min-width: 48em) 30vw, 60vw" } %}{% endif %}
   </figure>
@@ -210,7 +211,7 @@ claseCuerpo: es-portada
 
 {# 7 · Cierre #}
 <section class="cierre" aria-labelledby="cierre-titulo">
-  <p class="cierre-frase" data-lines>¿Haces cerveza, vermut, kombucha o refrescos y no estás en el mapa? Escríbenos con tu web y lo comprobamos.</p>
+  <p class="cierre-frase" data-lines>¿Haces bebidas y no estás en el mapa? Escríbenos con tu web y lo comprobamos.</p>
   <div class="cierre-derecha">
   <figure class="cierre-foto" data-revelar="mascara">{% imagen "jengibre", { clase: "cubre", sizes: "170px" } %}</figure>
   <div class="cierre-contacto">

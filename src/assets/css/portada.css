@@ -24,11 +24,11 @@
 .portada-entradilla { font-size: var(--step-body); line-height: 1.4; max-width: 30ch; }
 .portada-accion { justify-self: start; }
 
-.declaracion { display: grid; grid-template-columns: 62fr 38fr; gap: 1.25rem 1rem; padding-top: clamp(5rem, 12vw, 9rem); }
-.declaracion-texto { grid-column: 1 / -1; font-size: var(--step-lead); line-height: 1.3; max-width: 32ch; }
-.declaracion-foto { grid-column: 1; grid-row: 2; aspect-ratio: 4 / 5; }
+.declaracion { display: grid; grid-template-columns: 62fr 38fr; gap: 1.25rem 1rem; padding-top: clamp(3.5rem, 8vw, 6rem); }
+.declaracion-texto { grid-column: 1 / -1; font-size: clamp(1.35rem, 1rem + 1.1vw, 1.875rem); line-height: 1.25; letter-spacing: -0.01em; max-width: 46ch; }
+.declaracion-foto { grid-column: 1 / -1; grid-row: 2; aspect-ratio: 4 / 3; }
 .declaracion-foto img { filter: grayscale(1) contrast(1.05); }
-.declaracion-nota { grid-column: 2; grid-row: 2; align-self: end; font-size: var(--step-small); color: var(--muted); }
+.declaracion-nota { grid-column: 1 / -1; grid-row: 3; font-size: var(--step-body); }
 .declaracion-nota a { color: var(--ink); }
 
 @media (min-width: 48em) {
@@ -48,10 +48,10 @@
   .portada-entradilla { grid-column: 1; grid-row: 1; font-size: var(--step-lead); padding-right: 2rem; padding-top: .6rem; }
   .portada-accion { grid-column: 1; grid-row: 2; align-self: end; }
 
-  .declaracion { grid-template-columns: 42fr 58fr; column-gap: 0; row-gap: 0; padding-top: clamp(8rem, 14vw, 12rem); }
-  .declaracion-texto { grid-column: 2; grid-row: 1; text-indent: 3em; max-width: 34ch; }
-  .declaracion-foto { grid-column: 1; grid-row: 1 / 3; align-self: end; width: min(24vw, 22rem); aspect-ratio: 1; transform: translateY(50%); }
-  .declaracion-nota { grid-column: 2; grid-row: 2; align-self: start; margin-top: 2.5rem; max-width: 46ch; }
+  .declaracion { grid-template-columns: 42fr 58fr; column-gap: 0; row-gap: 0; padding-top: clamp(4rem, 7vw, 6.5rem); align-items: start; }
+  .declaracion-texto { grid-column: 2; grid-row: 1; max-width: 46ch; }
+  .declaracion-foto { grid-column: 1; grid-row: 1 / 3; width: calc(100% - 2.5rem); aspect-ratio: 4 / 5; max-height: 34rem; }
+  .declaracion-nota { grid-column: 2; grid-row: 2; align-self: start; margin-top: 2.5rem; max-width: 52ch; font-size: var(--step-body); color: var(--ink); }
 }
 
 /* ---------- 2 · cinco cosas que mirar (escena) ---------- */
@@ -60,18 +60,20 @@
 .senales-fijo { width: 100%; max-width: 22rem; }
 .senales-texto { display: grid; gap: 1.5rem; align-content: start; }
 .senales-lista { display: grid; gap: 2rem; margin-top: 1rem; }
-.senal h3 { font-size: var(--step-lead); margin-bottom: .4rem; }
-.senal p { max-width: var(--measure); }
+.senal h3 { font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.5rem); margin-bottom: .75rem; letter-spacing: -0.02em; }
+.senal-cita { margin-bottom: .9rem; }
+.senal-cita span { display: inline; background: var(--field-2); padding: .15em .35em; font-weight: 700; font-size: var(--step-body); line-height: 1.7; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.senal p:not(.senal-cita) { max-width: 40ch; font-size: var(--step-lead); line-height: 1.35; }
 .senales-texto .enlace { justify-self: start; }
 
 @media (min-width: 48em) {
-  .senales { grid-template-columns: 42fr 58fr; gap: 0; padding-top: calc(var(--section) * 1.4); }
+  .senales { grid-template-columns: 42fr 58fr; gap: 0; padding-top: var(--section); }
   .senales-figura { display: block; padding: 0; margin-right: 2.5rem; }
   .senales-fijo { position: sticky; top: 0; height: 100svh; max-width: none; display: grid; place-items: center; padding: 8svh 14%; overflow: clip; }
   .senales-fijo .etiqueta { width: auto; max-width: 100%; max-height: 84svh; }
-  .senales-texto { padding: 18svh 0; gap: 2rem; }
+  .senales-texto { padding: 10svh 0 8svh; gap: 1.5rem; }
   .senales-lista { gap: 0; }
-  .senal { min-height: 60svh; display: flex; flex-direction: column; justify-content: center; }
+  .senal { min-height: 40svh; display: flex; flex-direction: column; justify-content: center; padding-block: 2rem; }
 }
 
 /* ---------- 2b · lo que la ley exige (mosaico) ---------- */
@@ -225,15 +227,16 @@
 .cierre-foto { width: 100%; aspect-ratio: 1; }
 .cierre-foto img { filter: grayscale(1) contrast(1.05); }
 .cierre-contacto { display: grid; gap: .75rem; align-content: start; }
-.cierre-pregunta { font-size: var(--step-body); font-weight: 600; letter-spacing: 0; }
+.cierre-pregunta { font-size: var(--step-lead); font-weight: 700; letter-spacing: -0.01em; }
 .cierre-enlaces { display: grid; gap: .35rem; }
-.cierre-enlaces a { font-weight: 500; }
-.cierre-nota { font-size: var(--step-small); color: var(--muted); overflow-wrap: anywhere; }
+.cierre-enlaces a { font-weight: 600; font-size: var(--step-lead); }
+.cierre-nota { font-size: var(--step-body); overflow-wrap: anywhere; }
 
 @media (min-width: 48em) {
-  .cierre { grid-template-columns: 42fr 58fr; gap: 0; align-items: start; padding-top: 10rem; }
+  .cierre { grid-template-columns: 42fr 58fr; gap: 0; align-items: start; padding-top: var(--section); }
   .cierre-frase { padding-right: 2.5rem; }
-  .cierre-derecha { grid-template-columns: 10.5rem minmax(0, 24rem); gap: 2rem; }
+  .cierre-derecha { grid-template-columns: 13rem minmax(0, 1fr); gap: 2rem; }
+  .cierre-frase { font-size: clamp(1.35rem, 1rem + 1.1vw, 1.875rem); line-height: 1.22; max-width: 26ch; }
 }
 .es-portada .pie { margin-top: 7.5rem; }
 
@@ -281,4 +284,24 @@
 @media (min-width: 48em) { .senal-recorte { display: none; } }
 
 .declaracion-texto .line { text-indent: 0; }
-@media (min-width: 48em) { .declaracion-texto .line:first-child { text-indent: 3em; } }
+
+
+/* ---------- capítulos de color: cortes limpios, sin degradados ---------- */
+.capitulo-negro { background: var(--field-1); color: var(--field-1-ink); margin-top: var(--section); padding-block: clamp(4rem, 8vw, 7rem); }
+.capitulo-negro .especimen-caja { background: none; }
+.capitulo-negro .especimen-b .especimen-caja { background: none; color: inherit; }
+.capitulo-negro .porpara-etiquetas .etiqueta { background: #1d1d1d; }
+.capitulo-negro .enlace { color: #fff; }
+.capitulo-negro .especimen figcaption, .capitulo-negro figcaption { color: #e6e6e1; }
+@media (max-width: 47.99em) {
+  .capitulo-negro .especimen-caja { background: #1d1d1d; }
+  .capitulo-negro .especimen-b .especimen-caja { background: #fff; color: var(--ink); }
+}
+.capitulo-gris { background: var(--surface); margin-top: var(--section); padding-block: clamp(4rem, 8vw, 7rem); }
+.capitulo-gris .comprueba-figura { background: var(--surface-2); }
+.capitulo-gris .test-pregunta fieldset { background: var(--bg); }
+.capitulo-gris .test-pregunta:nth-child(even) fieldset { background: #fafaf8; }
+.familias { padding-top: var(--section); }
+.cierre { padding-bottom: 0; }
+.mapa-portada + .capitulo-gris { margin-top: 0; }
+@media (max-width: 47.99em) { .senal-cita { display: none; } }
