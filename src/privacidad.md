@@ -15,7 +15,7 @@ bebidasartesanales.es no instala cookies, ni propias ni de terceros. Por eso no 
 
 ## Analítica de visitas anónima
 
-Para saber cuántas personas leen la web y qué páginas interesan más, usamos GoatCounter, un servicio de analítica que no usa cookies ni identifica a las personas. Registra datos agregados como la página visitada, la web desde la que llegas, el tipo de navegador y el país aproximado. No guarda tu dirección IP ni crea un perfil tuyo. Mientras no esté configurada, no se carga.
+Para saber cuántas personas leen la web y qué páginas interesan más, usamos GoatCounter, un servicio de analítica que no usa cookies ni identifica a las personas. Registra datos agregados como la página visitada, la web desde la que llegas, el tipo de navegador y el país aproximado. No guarda tu dirección IP ni crea un perfil tuyo.
 
 ## «Comprueba tu botella»
 
