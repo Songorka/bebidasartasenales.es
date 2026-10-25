@@ -83,16 +83,8 @@ Todas son de Wikimedia Commons, con licencias que permiten uso comercial. Su cr�
 **Dibujos hechos para la web:** las etiquetas, la botella y los sellos. Las marcas, direcciones y lotes que aparecen en ellos son inventados.
 El contorno del mapa sale de Natural Earth (dominio público).
 
-**Sustitutos provisionales que se reemplazarán con tus medios:**
-
-| Hueco | Lo que se ve ahora |
-|---|---|
-| V1 | Clip de archivo del mosto |
-| V2 | Foto de la kombucha |
-| G1 | Dibujo de la botella |
-| G2 | Foto de la kombucha |
-| G3 | Cono de lúpulo abierto |
-| G4 | Etiquetas de 1910 |
+**Medios generados con IA (Higgsfield), ya publicados:** V1 (botella girando con su lote, en la portada), V2 (fermentación, en el mapa),
+G1 (botella por detrás), G2 (vaso a contraluz), G3 (botánicos y lúpulo) y G4 (detalle de contraetiqueta con lote). El pie de la web lo indica.
 
 ## Lo que queda de tu mano (pasos detallados en `README.md`)
 
@@ -101,7 +93,6 @@ El contorno del mapa sale de Natural Earth (dominio público).
 3. **Cuenta de GoatCounter** (gratis) y darme el código.
 4. **Google Search Console**: darme el código de verificación y enviar el sitemap.
 5. **CIF y domicilio** de Duaba Directorship para el aviso legal y la privacidad (ahora pone `[CIF]` y `[DOMICILIO]`).
-6. **Generar los vídeos e imágenes de `MEDIOS.md`** con Higgsfield (V1, V2, G1–G4) y soltarlos en `medios-entrada/` con el nombre indicado.
 7. Opcional: **renombrar el repositorio** a `bebidasartesanales.es`. Si lo haces, dímelo y actualizo el remoto.
 
 ## Textos que conviene que revises

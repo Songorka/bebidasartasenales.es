@@ -372,13 +372,20 @@
       "w": 1920,
       "h": 1080,
       "generado": true
+    },
+    "v1": {
+      "mp4": "/assets/video/v1.mp4",
+      "webm": "/assets/video/v1.webm",
+      "poster": "/assets/video/v1-poster.jpg",
+      "w": 1920,
+      "h": 1080,
+      "generado": true
     }
   },
   "huecos": {
     "v1": {
-      "video": "sala-coccion",
-      "poster": "mosto",
-      "provisional": true
+      "video": "v1",
+      "generado": true
     },
     "v2": {
       "video": "v2",

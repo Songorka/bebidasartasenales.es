@@ -10,9 +10,14 @@ en la carpeta `medios-entrada/`** (en la raíz del proyecto; créala si no exist
 Claude Code ejecutará `npm run medios`, que convierte cada fichero a los formatos y tamaños de la web,
 y lo subirá. El pie de la web pasará a decir "Algunas imágenes y vídeos están generados con IA".
 
+## Estado (25/10/2026)
+
+Los seis huecos ya tienen su pieza generada con Higgsfield y están publicados. Los ficheros originales están en
+`medios-entrada/` (que no se sube a GitHub). Para cambiar cualquiera, genera otra versión con el mismo nombre y pide a Claude Code que la procese.
+
 ## Resumen
 
-| Hueco | Nombre del fichero | Dónde aparece | Medidas | Duración | Ahora mismo muestra |
+| Hueco | Nombre del fichero | Dónde aparece | Medidas | Duración | Sustituto si se borra |
 |---|---|---|---|---|---|
 | **V1** | `v1.mp4` | Portada, primera pantalla: la tesela grande del mosaico de arriba a la izquierda | 1920 × 1080 px (16:9) | 6–12 s, bucle | Clip de archivo de un cubo con mosto de cerveza |
 | **V2** | `v2.mp4` | Portada, sección del mapa ("Hechas cerca de ti"), a la izquierda | 1920 × 1080 px (16:9) | 6–12 s, bucle | Foto de archivo de tarros de kombucha |
