@@ -30,7 +30,7 @@ Eleventy 3 (Nunjucks + Markdown) · CSS propio con tokens · JS vanilla mínimo 
 - Puerta de calidad: `node .claude/skills/design-taste-frontend/scripts/lint.mjs src` y `node .claude/skills/design-taste-frontend/scripts/inspect.mjs _site/index.html`
 
 ## Datos fijos
-- Dominio: `bebidasartesanales.es` · Correo de venta y contacto: `[correo]`
+- Dominio: `bebidasartesanales.es` · Correo de venta y contacto: guardado codificado en `src/_data/site.json` (`correoCodificado`, base64). No lo escribas nunca en claro en el repositorio ni en el HTML: en las plantillas usa el atajo `{% correo %}`
 - Titular legal: Duaba Directorship, S.L. (CIF y domicilio los completa el propietario: deja `[CIF]` y `[DOMICILIO]`).
 - GitHub: `Songorka/bebidasartasenales.es` (nombre con erratas; comprueba `git remote -v` por si se renombró).
 - Bebidas: cerveza · vermut y destilados · sin alcohol (kombucha, ginger beer, refrescos). **Sin sidra.**

@@ -83,6 +83,6 @@ Botón: Empezar
 ## 7. Cierre
 Frase: ¿Haces cerveza, vermut, kombucha o refrescos y no estás en el mapa? Escríbenos con tu web y lo comprobamos.
 Pregunta: ¿Quieres este dominio?
-Enlaces: [correo] · Abrir el mapa
+Enlaces: correo de contacto · Abrir el mapa
 Línea: Respondemos en unos días.
 Pie: bebidasartesanales.es (a toda anchura) · Este dominio está en venta · +18 consumo responsable · Créditos de imágenes · Aviso legal · Privacidad

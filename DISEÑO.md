@@ -18,7 +18,7 @@ Claude Code decide los detalles y solo pregunta cuando una decisión es de produ
   3. **Mapa de productores** reales de España, filtrable por bebida y comunidad autónoma.
   4. **"Comprueba tu botella"** — pequeña herramienta interactiva (6 preguntas sobre la etiqueta → un sello).
      Es secundaria y apoya al tema 1. Nunca protagonista.
-- **Pie de página obligatorio:** aviso "Este dominio está en venta · [correo]"
+- **Pie de página obligatorio:** aviso "Este dominio está en venta" con el correo de contacto (protegido frente a robots)
   y aviso de consumo responsable (+18). Debe verse, pero no gritar.
 - **Sin ventas, sin carrito, sin precios.** No es una tienda ni debe parecerlo.
 

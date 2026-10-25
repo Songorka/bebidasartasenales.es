@@ -133,7 +133,7 @@ Es la fase más importante para el valor del dominio. Textos largos, bien escrit
    familia y comunidad (botones reales, con estado accesible), lista textual debajo del mapa (misma información,
    indexable, funciona sin JS). Al pulsar un marcador: nombre, localidad, enlace a su web.
 3. Enlace desde cada guía con filtro aplicado (`/mapa/?tipo=cerveza`).
-4. Bloque "¿Eres productor y no apareces? Escríbenos" → `mailto:[correo]` con asunto preparado.
+4. Bloque "¿Eres productor y no apareces? Escríbenos" → enlace de correo protegido (`{% correo %}`) con asunto preparado.
 5. Atribución obligatoria de OpenStreetMap y Leaflet. Commit: "Fase 4: mapa de productores".
 
 **Criterio de salida:** mapa funcional en móvil y escritorio con ≥ 40 productores verificados.
