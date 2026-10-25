@@ -16,14 +16,21 @@
   let comunidad = params.get("comunidad") || "";
   controles.hidden = false;
 
-  // Carga Leaflet solo aquí, y solo cuando hace falta.
-  const css = document.createElement("link");
-  css.rel = "stylesheet"; css.href = "/assets/vendor/leaflet/leaflet.css";
-  document.head.append(css);
-  const js = document.createElement("script");
-  js.src = "/assets/vendor/leaflet/leaflet.js";
-  js.onload = iniciar;
-  document.head.append(js);
+  // El mapa dibujado se ve siempre. Leaflet y las teselas de OpenStreetMap solo se cargan si se pide.
+  const puntos = [...lienzo.querySelectorAll(".punto")];
+  const abrir = controles.querySelector("[data-abrir-mapa]");
+  abrir.addEventListener("click", () => {
+    abrir.disabled = true;
+    abrir.textContent = "Cargando el mapa…";
+    const css = document.createElement("link");
+    css.rel = "stylesheet"; css.href = "/assets/vendor/leaflet/leaflet.css";
+    document.head.append(css);
+    const js = document.createElement("script");
+    js.src = "/assets/vendor/leaflet/leaflet.js";
+    js.onload = () => { iniciar(); abrir.hidden = true; lienzo.focus({ preventScroll: true }); };
+    js.onerror = () => { abrir.disabled = false; abrir.textContent = "No se pudo cargar. Reintentar"; };
+    document.head.append(js);
+  });
 
   let mapa, capa;
   const marcadores = [];
@@ -31,6 +38,8 @@
   function iniciar() {
     const L = window.L;
     lienzo.innerHTML = "";
+    lienzo.tabIndex = -1;
+    lienzo.setAttribute("aria-label", "Mapa interactivo de productores");
     lienzo.classList.add("con-leaflet");
     mapa = L.map(lienzo, { scrollWheelZoom: false, zoomSnap: 0.25 }).setView([40.2, -3.6], 5.5);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -65,6 +74,7 @@
       if (ok) n++;
     });
     grupos.forEach((g) => { g.hidden = !g.querySelector(".productor:not([hidden])"); });
+    puntos.forEach((p) => p.classList.toggle("fuera", !((familia === "todas" || p.dataset.familia === familia) && (!comunidad || p.dataset.comunidad === comunidad))));
     recuento.textContent = n;
     if (capa) {
       capa.clearLayers();

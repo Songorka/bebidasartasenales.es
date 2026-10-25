@@ -14,7 +14,9 @@
 .mapa-lienzo.con-leaflet { display: block; padding: 0; background: var(--surface); }
 .mapa-tierra { fill: #fff; }
 .mapa-canarias { fill: none; stroke: var(--ink); stroke-width: 3; }
-.punto { fill: var(--ink); stroke: var(--field-2); stroke-width: 2; }
+.punto { fill: var(--ink); stroke: var(--field-2); stroke-width: 2; transition: opacity var(--t-ui) ease; }
+.punto.fuera { opacity: .12; }
+.mapa-abrir:disabled { opacity: .7; cursor: progress; }
 .mapa-lienzo .leaflet-tile-pane { filter: grayscale(1) contrast(.95) brightness(1.04); }
 .mapa-lienzo .leaflet-container, .mapa-lienzo .leaflet-container * { font-family: var(--font) !important; }
 .mapa-lienzo .leaflet-control-attribution { font-size: 13px; }

@@ -10,6 +10,7 @@
   <title>{{ tituloPagina }}</title>
   <meta name="description" content="{{ descPagina }}">
   <link rel="canonical" href="{{ urlPagina }}">
+  {%- if noindex %}<meta name="robots" content="noindex">{% endif %}
   <meta name="theme-color" content="#ffffff">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="bebidasartesanales.es">

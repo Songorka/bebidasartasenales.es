@@ -35,6 +35,7 @@ migas:
         {%- endfor %}
       </select>
     </label>
+    <button type="button" class="boton boton-tinta mapa-abrir" data-abrir-mapa>Abrir el mapa interactivo</button>
     <p class="mapa-estado" aria-live="polite"><span data-recuento>{{ lista | length }}</span> productores a la vista</p>
   </div>
 
@@ -44,7 +45,7 @@ migas:
       <rect class="mapa-canarias" x="{{ mapa.canarias.x }}" y="{{ mapa.canarias.y }}" width="{{ mapa.canarias.w }}" height="{{ mapa.canarias.h }}"/>
       <path class="mapa-tierra" d="{{ mapa.d }}"/>
       {%- for p in lista %}{% set xy = p | proyectar %}
-      <circle class="punto" cx="{{ xy[0] }}" cy="{{ xy[1] }}" r="6"/>
+      <circle class="punto" data-familia="{{ p.tipo | familiaDe }}" data-comunidad="{{ p.comunidad }}" cx="{{ xy[0] }}" cy="{{ xy[1] }}" r="6"><title>{{ p.nombre }}, {{ p.localidad }}</title></circle>
       {%- endfor %}
     </svg>
   </div>
