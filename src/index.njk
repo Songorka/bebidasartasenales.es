@@ -8,6 +8,7 @@ claseCuerpo: es-portada
 ---
 {%- from "svg/etiqueta.njk" import etiqueta -%}
 {%- from "svg/pareja.njk" import etiquetaReal, etiquetaDisfrazada -%}
+{%- from "svg/etiqueta-mini.njk" import etiquetaMini -%}
 {%- set lista = productores or [] -%}
 
 {# 1 · Primera pantalla: mosaico y título en el eje #}
@@ -16,11 +17,11 @@ claseCuerpo: es-portada
     <div style="--i:0" class="tesela t-video">{% hueco "v1", { clase: "cubre", sizes: "(min-width: 48em) 34vw, 66vw", prioridad: true } %}</div>
     <div style="--i:1" class="tesela t-etiqueta campo-2">{{ etiqueta("et-portada", "etiqueta-tesela", false) }}</div>
     <div style="--i:2" class="tesela t-lupulo">{% imagen "lupulo", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
-    <div style="--i:3" class="tesela t-negro campo-1"></div>
+    <div style="--i:3" class="tesela t-negro campo-1 t-mini">{{ etiquetaMini("vermut", "et-mini-vermut") }}</div>
     <div style="--i:4" class="tesela t-cebada">{% imagen "cebada", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
     <div style="--i:5" class="tesela t-alambiques">{% imagen "alambiques", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
-    <div style="--i:6" class="tesela t-gris superficie"></div>
-    <div style="--i:7" class="tesela t-lupulino">{% imagen "lupulino", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
+    <div style="--i:6" class="tesela t-gris superficie t-mini">{{ etiquetaMini("kombucha", "et-mini-kombucha") }}</div>
+    <div style="--i:7" class="tesela t-lupulino">{% imagen "kombucha", { clase: "cubre", sizes: "17vw", alt: "" } %}</div>
     <div style="--i:8" class="tesela t-campo campo-2"></div>
   </div>
 
@@ -71,7 +72,7 @@ claseCuerpo: es-portada
     </figure>
     <div class="ley-t ley-cifra campo-2">
       <p class="cifra nums">1,2&nbsp;%</p>
-      <p>Por encima de esta graduación, una cerveza o un destilado no tienen que listar sus ingredientes. El vermut sí, desde 2023.</p>
+      <p>Por encima, una cerveza o un destilado no tienen que listar ingredientes. Por debajo, como una kombucha, sí. El vermut, siempre desde 2023.</p>
     </div>
     <div class="ley-t ley-lista superficie">
       <p class="ley-lista-titulo">Siempre en la etiqueta:</p>
@@ -87,13 +88,13 @@ claseCuerpo: es-portada
       <p>El nombre que sale en la etiqueta es el de quien responde de ella, no siempre el de quien la fabrica.</p>
     </div>
     <div class="ley-t ley-frase-b superficie">
-      <p>«De fabricación artesana» es, en cerveza, una mención voluntaria con definición legal.</p>
+      <p>«Sin alcohol» no mide lo mismo en todo: en cerveza, por debajo del 1&nbsp;%; en un refresco, hasta el 0,5&nbsp;%.</p>
     </div>
     <div class="ley-t ley-frase-c campo-2">
       <p>Qué es «artesano» en alimentación lo decide cada comunidad, y varias no lo regulan.</p>
     </div>
   </div>
-  <p class="ley-fuentes">Fuentes: <a href="https://eur-lex.europa.eu/eli/reg/2011/1169/oj/spa">Reglamento (UE) 1169/2011</a>, arts. 8, 9 y 16; <a href="https://www.boe.es/eli/es/rd/1991/12/13/1808/con">Real Decreto 1808/1991</a> sobre el lote; <a href="https://www.boe.es/doue/2021/435/L00262-00314.pdf">Reglamento (UE) 2021/2117</a> para el vermut; <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2016-11952">Real Decreto 678/2016</a>. Más en <a href="/como-distinguir/que-significa-artesanal/">qué significa «artesanal»</a>.</p>
+  <p class="ley-fuentes">Fuentes: <a href="https://eur-lex.europa.eu/eli/reg/2011/1169/oj/spa">Reglamento (UE) 1169/2011</a>, arts. 8, 9 y 16; <a href="https://www.boe.es/eli/es/rd/1991/12/13/1808/con">Real Decreto 1808/1991</a> sobre el lote; <a href="https://www.boe.es/doue/2021/435/L00262-00314.pdf">Reglamento (UE) 2021/2117</a> para el vermut; <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2016-11952">Real Decreto 678/2016</a>; <a href="https://www.boe.es/eli/es/rd/2011/05/09/650/con">Real Decreto 650/2011</a> para los refrescos. Más en <a href="/como-distinguir/que-significa-artesanal/">qué significa «artesanal»</a>.</p>
 </section>
 
 {# 3 · Por / para #}

@@ -14,6 +14,8 @@
 .t-video { grid-column: 1 / 3; grid-row: 1; }
 .t-etiqueta { grid-column: 3; grid-row: 1 / 3; display: grid; place-items: center; padding: 8%; }
 .t-etiqueta .etiqueta { width: auto; height: 100%; max-width: 100%; }
+.t-mini { display: grid; place-items: center; padding: 9%; }
+.t-mini .etiqueta { width: auto; height: 100%; max-width: 100%; }
 .t-lupulo { grid-column: 1; grid-row: 2; }
 .t-negro { grid-column: 2; grid-row: 2; }
 .t-cebada, .t-alambiques, .t-gris, .t-lupulino, .t-campo { display: none; }
@@ -304,4 +306,4 @@
 .familias { padding-top: var(--section); }
 .cierre { padding-bottom: 0; }
 .mapa-portada + .capitulo-gris { margin-top: 0; }
-@media (max-width: 47.99em) { .senal-cita { display: none; } }
+

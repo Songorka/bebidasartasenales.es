@@ -1,0 +1,42 @@
+{#- Contraetiquetas pequeñas e inventadas para el mosaico de la portada. tipo: vermut | kombucha -#}
+{% macro etiquetaMini(tipo, pref) %}
+{%- if tipo == "kombucha" %}
+<svg class="etiqueta etiqueta-mini-tesela" viewBox="0 0 200 270" role="img" aria-labelledby="{{ pref }}-t" xmlns="http://www.w3.org/2000/svg">
+  <title id="{{ pref }}-t">Contraetiqueta de ejemplo de una kombucha</title>
+  <rect class="et-papel" width="200" height="270"/>
+  <g class="et-texto">
+    <text x="14" y="32" class="et-nombre" style="font-size:17px">Kombucha de jengibre</text>
+    <text x="14" y="62" class="et-p" style="font-size:9.5px"><tspan font-weight="700">Ingredientes:&#160;</tspan>agua, té verde,</text>
+    <text x="14" y="75" class="et-p" style="font-size:9.5px">azúcar de caña, jengibre y</text>
+    <text x="14" y="88" class="et-p" style="font-size:9.5px">cultivo de kombucha.</text>
+    <text x="14" y="122" class="et-grande" style="font-size:18px">Sin pasteurizar</text>
+    <text x="14" y="150" class="et-p" style="font-size:9.5px" font-weight="700">Conservar en frío</text>
+    <text x="186" y="150" class="et-p" style="font-size:9.5px" font-weight="700" text-anchor="end">33 cl</text>
+    <text x="14" y="180" class="et-lote" style="font-size:12px">L 2610-3</text>
+    <text x="14" y="194" class="et-p" style="font-size:9.5px">Embotellada el 14/10/2026</text>
+    <text x="14" y="224" class="et-p" style="font-size:9.5px">Elaborada por</text>
+    <text x="14" y="237" class="et-p" style="font-size:9.5px" font-weight="700">Obrador de Ejemplo, S. L.</text>
+    <text x="14" y="250" class="et-p" style="font-size:9.5px">00000 Villaejemplo (España)</text>
+  </g>
+</svg>
+{%- else %}
+<svg class="etiqueta etiqueta-mini-tesela" viewBox="0 0 200 270" role="img" aria-labelledby="{{ pref }}-t" xmlns="http://www.w3.org/2000/svg">
+  <title id="{{ pref }}-t">Contraetiqueta de ejemplo de un vermut</title>
+  <rect class="et-papel" width="200" height="270"/>
+  <g class="et-texto">
+    <text x="14" y="32" class="et-nombre" style="font-size:17px">Vermut rojo</text>
+    <text x="14" y="62" class="et-p" style="font-size:9.5px"><tspan font-weight="700">Ingredientes:&#160;</tspan>vino blanco,</text>
+    <text x="14" y="75" class="et-p" style="font-size:9.5px">azúcar, alcohol de vino, ajenjo,</text>
+    <text x="14" y="88" class="et-p" style="font-size:9.5px">genciana y piel de naranja.</text>
+    <text x="14" y="122" class="et-grande" style="font-size:22px">15 % vol</text>
+    <text x="186" y="122" class="et-grande" style="font-size:22px" text-anchor="end">75 cl</text>
+    <text x="14" y="150" class="et-p" style="font-size:9.5px" font-weight="700">Seis meses en roble</text>
+    <text x="14" y="180" class="et-lote" style="font-size:12px">L 0926</text>
+    <text x="14" y="194" class="et-p" style="font-size:9.5px">Elaborado en 09/2026</text>
+    <text x="14" y="224" class="et-p" style="font-size:9.5px">Elaborado y embotellado por</text>
+    <text x="14" y="237" class="et-p" style="font-size:9.5px" font-weight="700">Bodega de Ejemplo, S. L.</text>
+    <text x="14" y="250" class="et-p" style="font-size:9.5px">00000 Villaejemplo (España)</text>
+  </g>
+</svg>
+{%- endif %}
+{% endmacro %}
