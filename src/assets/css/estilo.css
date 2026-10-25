@@ -66,6 +66,23 @@ picture.cubre { display: block; }
 .titulo-seccion { font-size: var(--step-head); }
 .entradilla { font-size: var(--step-lead); line-height: 1.35; max-width: 34ch; }
 
+/* ---------- dibujos: etiqueta, botella ---------- */
+.etiqueta { width: 100%; height: auto; }
+.etiqueta, .botella { font-family: var(--font); }
+.et-papel { fill: #fff; }
+.et-texto text { fill: var(--ink); }
+.et-nombre { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; }
+.et-sub { font-size: 16px; }
+.et-p { font-size: 15px; }
+.et-grande { font-size: 40px; font-weight: 700; letter-spacing: -0.02em; }
+.et-lote { font-size: 20px; font-weight: 700; }
+.zona-fondo { fill: transparent; }
+.zona.activa .zona-fondo { fill: var(--ink); }
+.zona.activa text, .zona.activa tspan { fill: #fff; }
+.bot-chapa { fill: var(--ink); }
+.bot-vidrio { fill: var(--accent); }
+.bot-brillo { fill: #fff; opacity: .25; }
+
 /* ---------- controles ---------- */
 .boton {
   display: inline-flex; align-items: center; justify-content: center;
@@ -113,7 +130,7 @@ picture.cubre { display: block; }
 
 @media (min-width: 60em) {
   .menu { display: none; }
-  .cabecera { grid-template-columns: auto minmax(0, calc(42% - 0.16 * var(--margin) - 11rem)) 1fr auto; }
+  .cabecera { grid-template-columns: auto minmax(max-content, calc(42% - 0.16 * var(--margin) - 11rem)) 1fr auto; }
   .marca { width: 11rem; }
   .cabecera-nav { display: flex; align-items: stretch; background: var(--accent); }
   .cabecera-nav ul { display: flex; align-items: stretch; flex-wrap: nowrap; list-style: none; margin: 0; padding: 0; }
@@ -142,12 +159,12 @@ picture.cubre { display: block; }
 .doc { padding-inline: var(--margin); }
 .doc-banda { position: relative; height: 34svh; min-height: 14rem; max-height: 26rem; overflow: hidden; background: var(--surface); }
 .doc-banda img, .doc-banda video { filter: grayscale(1) contrast(1.05); }
-.doc-banda figcaption { position: absolute; left: 0; bottom: 0; background: var(--bg); padding: .45rem .75rem; font-size: var(--step-small); max-width: 40ch; }
+.doc-banda figcaption { display: none; position: absolute; left: 0; bottom: 0; background: var(--bg); padding: .45rem .75rem; font-size: var(--step-small); max-width: 40ch; }
 .doc-cabeza { display: grid; gap: 1.25rem; padding-top: clamp(2.5rem, 6vw, 5rem); }
 .doc-cabeza .doc-titulo { order: -1; }
 .doc-padre { display: inline-block; font-weight: 600; color: var(--accent); margin-bottom: 1rem; }
 .doc-titulo { font-size: clamp(2.6rem, 11vw, 3.25rem); line-height: .95; letter-spacing: -0.03em; max-width: 13em; }
-.doc-titulo-largo { font-size: clamp(1.75rem, 7.4vw, 2.4rem); line-height: 1; }
+.doc-titulo-largo { font-size: clamp(1.5rem, 6vw, 2.4rem); line-height: 1.02; }
 .doc-entradilla { font-size: var(--step-lead); line-height: 1.35; max-width: 34ch; }
 .doc-cuerpo { display: grid; gap: 2rem; margin-top: clamp(2.5rem, 6vw, 4.5rem); }
 .doc-lado { display: grid; gap: 1.5rem; align-content: start; font-size: var(--step-small); }
@@ -157,7 +174,7 @@ picture.cubre { display: block; }
 .doc-indice ol { margin: 0; padding-left: 1.2em; display: grid; gap: .35rem; }
 .doc-indice a { color: var(--ink); }
 
-.prosa { max-width: 62ch; }
+.prosa > :not(figure):not(table) { max-width: 62ch; }
 .prosa > * + * { margin-top: 1.1em; }
 .prosa h2 { font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.5rem); margin-top: 2.4em; scroll-margin-top: 1.5rem; }
 .prosa h3 { font-size: var(--step-lead); margin-top: 1.9em; letter-spacing: -0.01em; }
@@ -175,7 +192,7 @@ picture.cubre { display: block; }
 .prosa th, .prosa td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--surface-2); vertical-align: top; }
 .prosa th { font-weight: 700; }
 .prosa .nota { background: var(--surface); padding: 1.25rem 1.4rem; }
-.prosa .fuentes { color: var(--ink); }
+.prosa .fuentes, .prosa #fuentes ~ ul { color: var(--ink); font-size: var(--step-small); }
 .prosa .fuentes a { color: var(--ink); }
 .prosa .fuentes li + li { margin-top: .3em; }
 
@@ -187,12 +204,13 @@ picture.cubre { display: block; }
 @media (hover: hover) and (pointer: fine) { .doc-relacionados a:hover { background: var(--field-2); } }
 
 @media (min-width: 60em) {
+  .doc-banda figcaption { display: block; }
   .doc-cabeza { grid-template-columns: 42fr 58fr; gap: 0; }
   .doc-cabeza .doc-titulo { order: 0; grid-column: 2; grid-row: 1; font-size: clamp(3.25rem, 6.4vw, 6.5rem); }
   .doc-cabeza .doc-titulo-largo { font-size: clamp(2.4rem, 3.9vw, 4rem); max-width: 16em; }
   .doc-lado-cabeza { grid-column: 1; grid-row: 1; padding-top: .6rem; padding-right: 2.5rem; }
   .doc-cuerpo { grid-template-columns: 42fr 58fr; gap: 0; }
-  .doc-lado { position: sticky; top: 1.5rem; padding-right: 2.5rem; max-width: 26rem; }
+  .doc-lado { position: sticky; top: 1.5rem; align-self: start; padding-right: 2.5rem; max-width: 26rem; }
   .doc-donde { grid-template-columns: 42fr 58fr; column-gap: 0; align-items: end; }
   .doc-donde .titulo-seccion { grid-row: 1 / 3; align-self: start; padding-right: 2.5rem; }
   .doc-donde p, .doc-donde .boton { grid-column: 2; }

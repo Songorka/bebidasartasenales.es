@@ -5,10 +5,26 @@
     "url": "/cerveza/",
     "mapa": "cerveza",
     "pistas": [
-      { "donde": "Mención", "pista": "«De fabricación artesana»", "nota": "Tiene definición legal: si aparece, la elaboración tiene que cumplirla." },
-      { "donde": "Proceso", "pista": "Sin filtrar ni pasteurizar", "nota": "Si lo dice, es normal que tenga poso en el fondo." },
-      { "donde": "Estilo", "pista": "Estilo y lúpulos concretos", "nota": "Una pequeña dice qué lúpulo usa; una genérica se queda en «rubia»." },
-      { "donde": "Fecha", "pista": "Consumo preferente corto", "nota": "Las cervezas sin pasteurizar aguantan menos tiempo." }
+      {
+        "donde": "Mención",
+        "pista": "«De fabricación artesana»",
+        "nota": "Tiene definición legal: si aparece, la elaboración tiene que cumplirla."
+      },
+      {
+        "donde": "Proceso",
+        "pista": "Sin filtrar ni pasteurizar",
+        "nota": "Si lo dice, es normal que tenga poso en el fondo."
+      },
+      {
+        "donde": "Estilo",
+        "pista": "Estilo y lúpulos concretos",
+        "nota": "Una pequeña dice qué lúpulo usa; una genérica se queda en «rubia»."
+      },
+      {
+        "donde": "Fecha",
+        "pista": "Consumo preferente corto",
+        "nota": "Las cervezas sin pasteurizar aguantan menos tiempo."
+      }
     ]
   },
   {
@@ -17,10 +33,26 @@
     "url": "/vermut-y-destilados/",
     "mapa": "vermut",
     "pistas": [
-      { "donde": "Base", "pista": "El vino o el alcohol de partida", "nota": "Un vermut cuidado nombra su vino base y su origen." },
-      { "donde": "Botánicos", "pista": "Plantas con nombre propio", "nota": "Ajenjo, genciana, piel de naranja: si los cita, los usa." },
-      { "donde": "Destilación", "pista": "Destilado propio o comprado", "nota": "Muchas ginebras parten de alcohol neutro comprado; la etiqueta puede decir cómo se aromatiza." },
-      { "donde": "Reposo", "pista": "Meses y tipo de madera", "nota": "«Envejecido» no dice nada; «doce meses en roble» sí." }
+      {
+        "donde": "Base",
+        "pista": "El vino o el alcohol de partida",
+        "nota": "Un vermut cuidado nombra su vino base y su origen."
+      },
+      {
+        "donde": "Botánicos",
+        "pista": "Plantas con nombre propio",
+        "nota": "Ajenjo, genciana, piel de naranja: si los cita, los usa."
+      },
+      {
+        "donde": "Destilación",
+        "pista": "«Gin destilado» o «London gin»",
+        "nota": "Obligan a destilar con las plantas; un «gin» a secas puede ser alcohol neutro con aromas añadidos."
+      },
+      {
+        "donde": "Reposo",
+        "pista": "Meses y tipo de madera",
+        "nota": "«Envejecido» no dice nada; «doce meses en roble» sí."
+      }
     ]
   },
   {
@@ -29,10 +61,26 @@
     "url": "/sin-alcohol/",
     "mapa": "sin-alcohol",
     "pistas": [
-      { "donde": "Proceso", "pista": "Fermentada de verdad", "nota": "La kombucha y la ginger beer artesanas fermentan; otras solo imitan el sabor." },
-      { "donde": "Frío", "pista": "«Conservar en frío»", "nota": "Si necesita nevera, suele estar viva y sin pasteurizar." },
-      { "donde": "Azúcar", "pista": "Dónde aparece el azúcar", "nota": "Los ingredientes van de más a menos: si el azúcar va primero, es sobre todo un refresco dulce." },
-      { "donde": "Sabor", "pista": "Jengibre, té, fruta", "nota": "Ingredientes que reconoces en lugar de un «aroma» sin más." }
+      {
+        "donde": "Proceso",
+        "pista": "Fermentada de verdad",
+        "nota": "La kombucha y la ginger beer artesanas fermentan; otras solo imitan el sabor."
+      },
+      {
+        "donde": "Frío",
+        "pista": "«Conservar en frío»",
+        "nota": "Si necesita nevera, suele estar viva y sin pasteurizar."
+      },
+      {
+        "donde": "Azúcar",
+        "pista": "Dónde aparece el azúcar",
+        "nota": "Los ingredientes van de más a menos: si el azúcar va primero, es sobre todo un refresco dulce."
+      },
+      {
+        "donde": "Sabor",
+        "pista": "Jengibre, té, fruta",
+        "nota": "Ingredientes que reconoces en lugar de un «aroma» sin más."
+      }
     ]
   }
 ]

@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: Guía por bebidas
+description: "Cerveza, vermut y destilados, kombucha y refrescos: qué son, cómo se hacen y cómo distinguir los artesanos de verdad. Guías divulgativas."
+permalink: /guia/
+css: [indices]
+migas:
+  - { texto: "Inicio", url: "/" }
+  - { texto: "Guía", url: "/guia/" }
+---
+{%- set fotos = { "cerveza": "lupulo", "vermut-y-destilados": "alambiques", "sin-alcohol": "kombucha" } -%}
+{%- set frases = {
+  "cerveza": "Malta, lúpulo, levadura y una mención legal, «de fabricación artesana», que casi nadie sabe leer.",
+  "vermut-y-destilados": "Vino con ajenjo, ginebras que se destilan y otras que no, licores y orujos con indicación geográfica.",
+  "sin-alcohol": "Kombucha, ginger beer y refrescos: fermentar de verdad frente a imitar el sabor."
+} -%}
+<article class="doc indice-guia">
+  <header class="doc-cabeza">
+    <div class="doc-lado-cabeza">
+      <p class="doc-entradilla">Las pistas para distinguir lo artesano cambian según la bebida. Elige la tuya.</p>
+    </div>
+    <h1 class="doc-titulo">Guía por bebidas</h1>
+  </header>
+
+  <ul class="familias-lista">
+    {%- for f in familias %}
+    <li class="familia-fila">
+      <a class="familia-enlace" href="{{ f.url }}">
+        <span class="familia-foto">{% imagen fotos[f.id], { clase: "cubre", sizes: "(min-width: 60em) 42vw, 100vw", alt: "" } %}</span>
+        <span class="familia-texto">
+          <span class="familia-nombre">{{ f.nombre }}</span>
+          <span class="familia-frase">{{ frases[f.id] }}</span>
+          <span class="familia-pistas">{% for p in f.pistas %}{{ p.pista }}{% if not loop.last %}<br>{% endif %}{% endfor %}</span>
+        </span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+
+  <section class="indice-articulos" aria-labelledby="art-t">
+    <h2 id="art-t" class="titulo-seccion">Artículos</h2>
+    <ul>
+      {%- for a in collections.articulos %}
+      <li><a href="{{ a.url }}">{{ a.data.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </section>
+</article>

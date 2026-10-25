@@ -1,0 +1,33 @@
+---
+layout: base.njk
+title: Artículos
+description: "Artículos para resolver dudas concretas sobre bebidas artesanales en España: cerveza artesana, vermut, kombucha y cómo leer sus etiquetas."
+permalink: /articulos/
+css: [indices]
+eleventyExcludeFromCollections: false
+migas:
+  - { texto: "Inicio", url: "/" }
+  - { texto: "Artículos", url: "/articulos/" }
+---
+<article class="doc indice-art">
+  <header class="doc-cabeza">
+    <div class="doc-lado-cabeza">
+      <p class="doc-entradilla">Respuestas largas a preguntas concretas. Cada artículo cita sus fuentes y se revisa cuando cambia la norma.</p>
+    </div>
+    <h1 class="doc-titulo">Artículos</h1>
+  </header>
+  <ol class="lista-articulos">
+    {%- for a in collections.articulos %}
+    <li class="articulo-fila">
+      <a href="{{ a.url }}" class="articulo-enlace">
+        <span class="articulo-foto">{% if a.data.imagen %}{% imagen a.data.imagen, { clase: "cubre", sizes: "(min-width: 60em) 20vw, 40vw", alt: "" } %}{% endif %}</span>
+        <span class="articulo-texto">
+          <span class="articulo-titulo">{{ a.data.title }}</span>
+          <span class="articulo-entradilla">{{ a.data.entradilla }}</span>
+          <span class="articulo-fecha"><time datetime="{{ a.date | iso }}">{{ a.date | fecha }}</time></span>
+        </span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ol>
+</article>

@@ -11,12 +11,21 @@ export default function (eleventyConfig) {
 
   // Markdown con anclas en los encabezados
   const md = markdownIt({ html: true, linkify: true, typographer: true })
-    .use(markdownItAnchor, { level: [2, 3], permalink: markdownItAnchor.permalink.headerLink() });
+    .use(markdownItAnchor, {
+      level: [2, 3],
+      permalink: markdownItAnchor.permalink.headerLink(),
+      slugify: (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
+        .replace(/[¿?¡!«»"'.,:;()]/g, "").trim().replace(/\s+/g, "-").replace(/-+/g, "-"),
+    });
   eleventyConfig.setLibrary("md", md);
 
   // Pasa-a-salida tal cual
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/leaflet/dist/leaflet.js": "assets/vendor/leaflet/leaflet.js",
+    "node_modules/leaflet/dist/leaflet.css": "assets/vendor/leaflet/leaflet.css",
+  });
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   eleventyConfig.addGlobalData("anio", () => new Date().getFullYear());
@@ -37,6 +46,17 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addFilter("palabras", (html = "") => String(html).replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length);
   eleventyConfig.addFilter("proyectar", (p) => proyectar(p.lat, p.lng));
+  eleventyConfig.addFilter("agruparPor", (lista = [], campo) => {
+    const grupos = {};
+    for (const x of lista) (grupos[x[campo]] ||= []).push(x);
+    return Object.keys(grupos).sort((a, b) => a.localeCompare(b, "es")).map((k) => ({
+      clave: k, items: grupos[k].sort((a, b) => a.nombre.localeCompare(b.nombre, "es")),
+    }));
+  });
+  eleventyConfig.addFilter("nombreTipo", (t) => ({
+    cerveza: "Cerveza", vermut: "Vermut", destilado: "Destilados", kombucha: "Kombucha", refresco: "Refrescos", "ginger-beer": "Ginger beer",
+  })[t] || t);
+  eleventyConfig.addFilter("dominio", (url = "") => url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, ""));
   eleventyConfig.addFilter("familiaDe", (tipo) =>
     tipo === "cerveza" ? "cerveza" : ["vermut", "destilado"].includes(tipo) ? "vermut-y-destilados" : "sin-alcohol"
   );

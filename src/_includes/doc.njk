@@ -15,7 +15,8 @@ layout: base.njk
       {%- if padre %}<a class="doc-padre" href="{{ padre.url }}">{{ padre.texto }}</a>{% endif %}
       {%- if entradilla %}<p class="doc-entradilla">{{ entradilla }}</p>{% endif %}
     </div>
-    <h1 class="doc-titulo{% if title.length > 32 %} doc-titulo-largo{% endif %}">{{ title }}</h1>
+    {%- set h1 = titular or title -%}
+    <h1 class="doc-titulo{% if h1.length > 32 %} doc-titulo-largo{% endif %}">{{ h1 }}</h1>
   </header>
 
   <div class="doc-cuerpo">

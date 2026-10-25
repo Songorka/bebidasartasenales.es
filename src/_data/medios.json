@@ -170,6 +170,139 @@
         "pagina": "https://commons.wikimedia.org/wiki/File:Anderson_Valley_Brewing_Company_-_November_2022_-_Sarah_Stierch_24.webm",
         "via": "Wikimedia Commons"
       }
+    },
+    "malta": {
+      "ruta": "/assets/img/archivo/malta",
+      "w": 3840,
+      "h": 2560,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Granos de malta de cebada en la palma de una mano",
+      "credito": {
+        "titulo": "Carapils Malt for Brewing",
+        "autor": "Noralambert",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "pagina": "https://commons.wikimedia.org/wiki/File:Carapils_Malt_for_Brewing.jpg",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "germinacion": {
+      "ruta": "/assets/img/archivo/germinacion",
+      "w": 2048,
+      "h": 1371,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Cebada germinando durante el malteado",
+      "credito": {
+        "titulo": "Malt vert - orge en germination",
+        "autor": "Bapt-francois",
+        "licencia": "CC BY-SA 4.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=51471905",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "enebro": {
+      "ruta": "/assets/img/archivo/enebro",
+      "w": 2960,
+      "h": 2180,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Rama de enebro con sus bayas azuladas",
+      "credito": {
+        "titulo": "Juniper berries lush",
+        "autor": "Dcrjsr",
+        "licencia": "CC BY 3.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by/3.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=27689577",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "genciana": {
+      "ruta": "/assets/img/archivo/genciana",
+      "w": 2304,
+      "h": 1728,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Raíces secas de genciana, uno de los amargos del vermut",
+      "credito": {
+        "titulo": "Gentiana lutea DriedRoots",
+        "autor": "B.navez",
+        "licencia": "CC BY-SA 3.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=2480893",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "barricas": {
+      "ruta": "/assets/img/archivo/barricas",
+      "w": 1600,
+      "h": 1142,
+      "anchos": [
+        640,
+        1200,
+        1600
+      ],
+      "alt": "Bodega con grandes toneles de roble",
+      "credito": {
+        "titulo": "Large botti size oak barrels in Chianti",
+        "autor": "Rob & Lisa Meehan",
+        "licencia": "CC BY 2.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=4170880",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "te": {
+      "ruta": "/assets/img/archivo/te",
+      "w": 2048,
+      "h": 1536,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Hojas de té verde en dos cuencos",
+      "credito": {
+        "titulo": "Longjing tea leaves",
+        "autor": "Gary Stevens",
+        "licencia": "CC BY 2.0",
+        "licenciaUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "pagina": "https://commons.wikimedia.org/w/index.php?curid=16607543",
+        "via": "Wikimedia Commons"
+      }
+    },
+    "piel-citrico": {
+      "ruta": "/assets/img/archivo/piel-citrico",
+      "w": 3000,
+      "h": 3000,
+      "anchos": [
+        640,
+        1200,
+        2000
+      ],
+      "alt": "Pieles de cítrico secas atadas en manojos",
+      "credito": {
+        "titulo": "Three-cut mandarin orange peel",
+        "autor": "Fumikas Sagisavas",
+        "licencia": "CC0",
+        "licenciaUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "pagina": "https://commons.wikimedia.org/wiki/File:Three-cut_mandarin_orange_peel.jpg",
+        "via": "Wikimedia Commons"
+      }
     }
   },
   "videos": {

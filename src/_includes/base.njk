@@ -1,4 +1,4 @@
-{%- set tituloPagina = (title + " | bebidasartesanales.es") if (title and page.url != "/") else site.titulo -%}
+{%- set tituloPagina = ((title + " | bebidasartesanales.es") if title.length <= 36 else title) if (title and page.url != "/") else site.titulo -%}
 {%- set descPagina = description or entradilla or site.descripcion -%}
 {%- set urlPagina = site.url + page.url -%}
 {%- set ogImagen = site.url + (ogImage or "/assets/img/og.jpg") -%}

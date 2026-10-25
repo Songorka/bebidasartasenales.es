@@ -27,6 +27,13 @@ const ARCHIVO = [
   { src: "kombucha-in-garglasern.jpg", nombre: "kombucha", alt: "Tarros de kombucha fermentando, tapados con tela, en una estantería" },
   { src: "zingiber-officinale-230935597.jpg", nombre: "jengibre", alt: "Planta de jengibre con la raíz asomando sobre la tierra" },
   { src: "anderson-valley-brewing-company-november-2022-sarah-poster.jpg", nombre: "mosto", alt: "Cubo con mosto de cerveza recién salido del tanque" },
+  { src: "carapils-malt-for-brewing.jpg", nombre: "malta", alt: "Granos de malta de cebada en la palma de una mano" },
+  { src: "malt-vert-orge-en-germination.jpg", nombre: "germinacion", alt: "Cebada germinando durante el malteado" },
+  { src: "juniper-berries-lush.jpg", nombre: "enebro", alt: "Rama de enebro con sus bayas azuladas" },
+  { src: "gentiana-lutea-driedroots.jpg", nombre: "genciana", alt: "Raíces secas de genciana, uno de los amargos del vermut" },
+  { src: "large-botti-size-oak-barrels-in-chianti.jpg", nombre: "barricas", alt: "Bodega con grandes toneles de roble" },
+  { src: "longjing-tea-leaves.jpg", nombre: "te", alt: "Hojas de té verde en dos cuencos" },
+  { src: "three-cut-mandarin-orange-peel.jpg", nombre: "piel-citrico", alt: "Pieles de cítrico secas atadas en manojos" },
 ];
 
 // Huecos para los medios generados por el propietario. Medidas en MEDIOS.md.

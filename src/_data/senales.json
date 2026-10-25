@@ -14,19 +14,19 @@
   {
     "id": "lote",
     "titulo": "El lote",
-    "texto": "Toda bebida envasada lleva un lote: la «L» con un código. Algunas pequeñas añaden la fecha de elaboración o el número de cocción. Eso es seguimiento de verdad.",
+    "texto": "Casi toda bebida envasada lleva un lote: la «L» con un código. Algunas pequeñas añaden la fecha de elaboración o el número de cocción. Eso es seguimiento de verdad.",
     "ancla": "el-lote"
   },
   {
     "id": "ingredientes",
     "titulo": "Los ingredientes",
-    "texto": "Por encima de 1,2 % de alcohol no es obligatorio listarlos. Si una cerveza o un vermut los enumera con detalle, es una decisión, no un trámite.",
+    "texto": "En cerveza y destilados de más de 1,2 % no es obligatorio listarlos; el vermut sí debe hacerlo desde 2023. Si una cerveza o una ginebra los enumera con detalle, es una decisión, no un trámite.",
     "ancla": "los-ingredientes"
   },
   {
     "id": "registro",
     "titulo": "Quién hay detrás",
-    "texto": "El nombre de la empresa que elabora se puede buscar en registros públicos. A veces una marca con aire de barrio pertenece a un grupo internacional.",
+    "texto": "El nombre de la empresa se puede buscar en registros públicos. Si la etiqueta trae número de registro sanitario, el registro de AESAN dice si ese sitio fabrica la bebida o solo la envasa.",
     "ancla": "quien-hay-detras"
   }
 ]
