@@ -1,0 +1,70 @@
+/* Comprueba tu botella */
+.test-cuerpo { display: grid; gap: 2.5rem; margin-top: clamp(2.5rem, 6vw, 4.5rem); }
+.test-figura { background: var(--surface); display: grid; place-items: center; padding: 2rem; aspect-ratio: 4 / 3; }
+.test-figura .botella { height: 100%; width: auto; max-height: 30rem; }
+.test { display: grid; gap: 2rem; }
+.test-preguntas { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.test-pregunta fieldset { margin: 0; border: 0; padding: 1.25rem; background: var(--surface); display: grid; gap: .9rem; }
+.test-pregunta:nth-child(even) fieldset { background: var(--surface-2); }
+.test-pregunta legend { padding: 0; float: left; width: 100%; display: grid; gap: .25rem; }
+.test-pregunta legend + * { clear: both; }
+.test-texto { font-weight: 700; font-size: var(--step-lead); line-height: 1.25; letter-spacing: -0.01em; }
+.test-ayuda { color: var(--muted); font-size: var(--step-small); }
+.test-opciones { display: none; gap: 6px; }
+.test-opciones label { position: relative; flex: 1 1 0; max-width: 9rem; }
+.test-opciones input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.test-opciones span { display: flex; align-items: center; justify-content: center; min-height: 3rem; background: var(--bg); font-weight: 600; transition: background-color var(--t-ui) ease, color var(--t-ui) ease, transform var(--t-press) var(--ease-out); }
+.test-opciones label:active span { transform: scale(0.97); }
+.test-opciones input:checked + span { background: var(--ink); color: var(--bg); }
+.test-opciones input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+.test-porque { font-size: var(--step-body); max-width: 60ch; }
+.test-porque a { color: var(--accent); font-weight: 600; }
+.test-pie { display: none; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.test-aviso { font-weight: 600; }
+
+/* con JavaScript: se contesta y la explicación aparece solo en las que fallan */
+.test-activo .test-opciones { display: flex; }
+.test-activo .test-pie { display: flex; }
+.test-activo .test-porque { display: none; }
+.test-activo.test-resuelto .test-falla .test-porque { display: block; }
+.test-resultado { display: grid; gap: 1.25rem; padding: clamp(1.5rem, 4vw, 2.5rem); background: var(--field-2); scroll-margin: 2rem; }
+.test-resultado:focus { outline: none; }
+.test-sello { display: grid; gap: 1.5rem; align-items: center; }
+.test-sello[hidden] { display: none; }
+.test-sello .sello { width: min(13rem, 60vw); }
+.test-sello-titulo { font-size: var(--step-head); }
+.test-sello-texto p { font-size: var(--step-lead); line-height: 1.3; max-width: 32ch; margin-top: .75rem; }
+.test-nota { font-size: var(--step-small); }
+.test-otra { justify-self: start; min-height: 2.75rem; color: var(--ink); }
+.test-mas { margin-top: 3rem; max-width: 60ch; }
+.test-mas a { color: var(--accent); font-weight: 600; }
+
+.sello { font-family: var(--font); overflow: visible; }
+.sello-fondo { fill: var(--bg); }
+.sello-aro { stroke: currentColor; }
+.sello-arco { font-size: 17px; font-weight: 600; fill: currentColor; }
+.sello-centro { font-size: 50px; font-weight: 700; letter-spacing: -2px; fill: currentColor; }
+.sello-linea { font-size: 19px; font-weight: 600; fill: currentColor; }
+.sello-muy { color: var(--accent); }
+.sello-pinta { color: var(--ink); }
+.sello-ojo { color: var(--ink); }
+.sello-ojo .sello-fondo { fill: var(--field-2); }
+.sello-ojo .sello-linea { font-size: 15px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .estampa .sello { animation: estampar 520ms var(--ease-out) both; }
+}
+@keyframes estampar {
+  0% { opacity: 0; transform: scale(1.35) rotate(-8deg); }
+  60% { opacity: 1; transform: scale(.96) rotate(-3deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-4deg); }
+}
+
+@media (min-width: 48em) {
+  .test-sello { grid-template-columns: auto 1fr; }
+}
+@media (min-width: 60em) {
+  .test-cuerpo { grid-template-columns: 42fr 58fr; gap: 0; align-items: start; }
+  .test-figura { position: sticky; top: 1.5rem; margin-right: 2.5rem; aspect-ratio: 4 / 5; }
+  .test-mas { margin-left: 42%; }
+}

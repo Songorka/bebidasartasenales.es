@@ -2,8 +2,8 @@
 layout: base.njk
 title: Artesana o solo lo parece
 description: Aprende a leer la etiqueta de una cerveza, un vermut o una kombucha y a saber quién la ha hecho de verdad. Guía divulgativa y mapa de productores de España.
-css: [portada]
-js: [portada]
+css: [portada, test]
+js: [portada, test]
 claseCuerpo: es-portada
 ---
 {%- from "svg/etiqueta.njk" import etiqueta -%}
@@ -69,14 +69,14 @@ claseCuerpo: es-portada
     </figure>
     <div class="ley-t ley-cifra campo-2">
       <p class="cifra nums">1,2&nbsp;%</p>
-      <p>Por encima de esta graduación, una bebida no está obligada a listar sus ingredientes.</p>
+      <p>Por encima de esta graduación, una cerveza o un destilado no tienen que listar sus ingredientes. El vermut sí, desde 2023.</p>
     </div>
     <div class="ley-t ley-lista superficie">
       <p class="ley-lista-titulo">Siempre en la etiqueta:</p>
       <ul>
         <li>El nombre de la bebida</li>
         <li>La cantidad</li>
-        <li>El lote</li>
+        <li>El lote, casi siempre</li>
         <li>Quién responde de ella</li>
         <li>El grado, si pasa de 1,2&nbsp;%</li>
       </ul>
@@ -88,10 +88,10 @@ claseCuerpo: es-portada
       <p>«De fabricación artesana» es, en cerveza, una mención voluntaria con definición legal.</p>
     </div>
     <div class="ley-t ley-frase-c campo-2">
-      <p>Fuera de la cerveza, cada comunidad decide qué es artesanía alimentaria.</p>
+      <p>Qué es «artesano» en alimentación lo decide cada comunidad, y varias no lo regulan.</p>
     </div>
   </div>
-  <p class="ley-fuentes">Fuentes: <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32011R1169">Reglamento (UE) 1169/2011</a>, arts. 8, 9 y 16; <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32011L0091">Directiva 2011/91/UE</a> sobre el lote; <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2016-11952">Real Decreto 678/2016</a>. Más en <a href="/como-distinguir/que-significa-artesanal/">qué significa «artesanal»</a>.</p>
+  <p class="ley-fuentes">Fuentes: <a href="https://eur-lex.europa.eu/eli/reg/2011/1169/oj/spa">Reglamento (UE) 1169/2011</a>, arts. 8, 9 y 16; <a href="https://www.boe.es/eli/es/rd/1991/12/13/1808/con">Real Decreto 1808/1991</a> sobre el lote; <a href="https://www.boe.es/doue/2021/435/L00262-00314.pdf">Reglamento (UE) 2021/2117</a> para el vermut; <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2016-11952">Real Decreto 678/2016</a>. Más en <a href="/como-distinguir/que-significa-artesanal/">qué significa «artesanal»</a>.</p>
 </section>
 
 {# 3 · Por / para #}
@@ -164,6 +164,11 @@ claseCuerpo: es-portada
       {% hueco "v2", { clase: "cubre", sizes: "(min-width: 48em) 38vw, 100vw" } %}
     </figure>
     <p class="mapa-recuento"><span class="nums" data-recuento>{{ lista | length }}</span> productores comprobados uno a uno, con su web.</p>
+    <ul class="mapa-comunidades">
+      {%- for g in lista | agruparPor("comunidad") %}
+      <li><span>{{ g.clave }}</span> <span class="nums">{{ g.items | length }}</span></li>
+      {%- endfor %}
+    </ul>
   </div>
   <div class="mapa-principal">
     <h2 id="mapa-titulo" class="titulo-seccion">Hechas cerca de ti</h2>
@@ -195,7 +200,10 @@ claseCuerpo: es-portada
   <div class="comprueba-texto">
     <h2 id="comprueba-titulo" class="titulo-seccion">Comprueba tu botella</h2>
     <p>Coge la bebida que tengas a mano. Seis preguntas sobre su etiqueta y te decimos qué pinta tiene.</p>
-    <a class="boton" href="/comprueba-tu-botella/">Empezar</a>
+    <details class="comprueba-desplegable">
+      <summary class="boton">Empezar</summary>
+      {% include "test.njk" %}
+    </details>
   </div>
 </section>
 

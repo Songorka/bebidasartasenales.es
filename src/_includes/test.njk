@@ -1,0 +1,35 @@
+{#- "Comprueba tu botella". Sin JavaScript: preguntas con su explicación. Con JavaScript: responde y recibe un sello. -#}
+{%- from "svg/sello.njk" import sello -%}
+<form class="test" data-test novalidate>
+  <ol class="test-preguntas">
+    {%- for p in test.preguntas %}
+    <li class="test-pregunta">
+      <fieldset>
+        <legend><span class="test-texto">{{ p.pregunta }}</span> <span class="test-ayuda">{{ p.ayuda }}</span></legend>
+        <div class="test-opciones">
+          <label><input type="radio" name="{{ p.id }}" value="si"><span>Sí</span></label>
+          <label><input type="radio" name="{{ p.id }}" value="no"><span>No</span></label>
+        </div>
+        <p class="test-porque">{{ p.porque }} <a href="{{ p.enlace }}">Por qué importa</a></p>
+      </fieldset>
+    </li>
+    {%- endfor %}
+  </ol>
+  <div class="test-pie">
+    <button type="submit" class="boton">Ver el sello</button>
+    <p class="test-aviso" data-test-aviso aria-live="polite"></p>
+  </div>
+  <div class="test-resultado" data-test-resultado tabindex="-1" hidden>
+    {%- for clave, r in test.resultados %}
+    <div class="test-sello" data-sello="{{ clave }}" hidden>
+      {{ sello(clave, "sello-" + clave + (prefijo or "")) }}
+      <div class="test-sello-texto">
+        <h3 class="test-sello-titulo">{{ r.titulo }}</h3>
+        <p>{{ r.texto }}</p>
+      </div>
+    </div>
+    {%- endfor %}
+    <p class="test-nota">Es una orientación a partir de la etiqueta, no un certificado.</p>
+    <button type="reset" class="enlace test-otra">Comprobar otra botella</button>
+  </div>
+</form>

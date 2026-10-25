@@ -1,0 +1,51 @@
+{
+  "preguntas": [
+    {
+      "id": "elabora",
+      "pregunta": "¿Pone «elaborado por» seguido de una empresa?",
+      "ayuda": "No vale solo «envasado para» o «distribuido por».",
+      "porque": "La ley solo obliga a poner a quien responde de la bebida, que puede ser quien la vende. Quien la hace suele decirlo con «elaborado por».",
+      "enlace": "/como-distinguir/senales/#quien-la-elabora"
+    },
+    {
+      "id": "donde",
+      "pregunta": "¿Da una localidad concreta y cuadra con lo que cuenta la marca?",
+      "ayuda": "Si presume de pueblo, mira si la dirección está en ese pueblo.",
+      "porque": "Una dirección real y coherente con la historia de la marca es buena señal. Un apartado de correos o una sede lejos del supuesto origen, no.",
+      "enlace": "/como-distinguir/senales/#donde-se-hace"
+    },
+    {
+      "id": "fecha",
+      "pregunta": "Además del lote, ¿indica la fecha de elaboración o el número de cocción?",
+      "ayuda": "El lote es la «L» con un código. Casi todas lo llevan.",
+      "porque": "El lote es obligatorio casi siempre. Dar también la fecha o la cocción no lo es: quien lo hace está enseñando su trazabilidad.",
+      "enlace": "/como-distinguir/senales/#el-lote"
+    },
+    {
+      "id": "ingredientes",
+      "pregunta": "¿Lista sus ingredientes y los reconoces todos?",
+      "ayuda": "En vermut es obligatorio; mira si hay plantas con nombre o solo «aromas».",
+      "porque": "Una cerveza o una ginebra no tienen que listar ingredientes. Si lo hacen con detalle, es una decisión. Ingredientes reconocibles valen más que «aromas» sin más.",
+      "enlace": "/como-distinguir/senales/#los-ingredientes"
+    },
+    {
+      "id": "marca",
+      "pregunta": "¿El nombre de la marca coincide con el de la empresa que la hace?",
+      "ayuda": "Compara el nombre grande de delante con la empresa de la letra pequeña.",
+      "porque": "Cuando marca y empresa coinciden, quien hace la bebida da la cara. Si no coinciden, la marca puede ser de otro: compruébalo en los registros públicos.",
+      "enlace": "/como-distinguir/senales/#quien-hay-detras"
+    },
+    {
+      "id": "como",
+      "pregunta": "¿Explica cómo está hecha con detalles concretos?",
+      "ayuda": "Fermentación, maceración, meses de reposo, tipo de alambique… y no solo «receta tradicional».",
+      "porque": "Los detalles concretos se pueden comprobar. «Tradicional», «de la abuela» o «hecho con cariño» no dicen nada de la elaboración.",
+      "enlace": "/como-distinguir/falsos-artesanos/"
+    }
+  ],
+  "resultados": {
+    "muy": { "titulo": "Muy artesanal", "texto": "La etiqueta da la cara: dice quién la hace, dónde y cómo. Es lo que hace un productor pequeño que no tiene nada que esconder." },
+    "pinta": { "titulo": "Tiene pinta", "texto": "Hay buenas señales, pero faltan datos. Mira las respuestas que han quedado en «no» y, si te pica la curiosidad, busca a la empresa." },
+    "ojo": { "titulo": "Ojo, puede ser marketing", "texto": "La etiqueta dice poco de quién la hace y cómo. Puede ser una buena bebida, pero lo de «artesana» no lo demuestra la etiqueta." }
+  }
+}

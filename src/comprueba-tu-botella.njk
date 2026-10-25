@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Comprueba tu botella
+description: "Seis preguntas sobre la etiqueta de la bebida que tienes delante y un sello que te dice si parece artesana de verdad o solo marketing."
+permalink: /comprueba-tu-botella/
+css: [test]
+js: [test]
+migas:
+  - { texto: "Inicio", url: "/" }
+  - { texto: "Comprueba tu botella", url: "/comprueba-tu-botella/" }
+---
+<article class="doc pagina-test">
+  <header class="doc-cabeza">
+    <div class="doc-lado-cabeza">
+      <p class="doc-entradilla">Coge la cerveza, el vermut o la kombucha que tengas a mano y dale la vuelta. Contesta mirando la etiqueta trasera.</p>
+    </div>
+    <h1 class="doc-titulo">Comprueba tu botella</h1>
+  </header>
+  <div class="test-cuerpo">
+    <figure class="test-figura">
+      {%- if medios.huecos.g1.svg %}{% include "svg/botella.njk" %}{% else %}{% hueco "g1", { clase: "cubre", sizes: "(min-width: 60em) 38vw, 100vw" } %}{% endif %}
+    </figure>
+    {% include "test.njk" %}
+  </div>
+  <p class="test-mas">¿Quieres entender cada pregunta a fondo? Lee <a href="/como-distinguir/senales/">las cinco señales</a> o llévate <a href="/como-distinguir/checklist/">la lista para el súper</a>.</p>
+</article>
