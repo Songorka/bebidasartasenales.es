@@ -1,6 +1,9 @@
 /* Comprueba tu botella */
 .test-cuerpo { display: grid; gap: 2.5rem; margin-top: clamp(2.5rem, 6vw, 4.5rem); }
 .test-figura { background: var(--surface); display: grid; place-items: center; padding: 2rem; aspect-ratio: 4 / 3; }
+.test-figura:has(picture) { padding: 0; display: block; overflow: clip; }
+.test-figura picture { width: 100%; height: 100%; }
+.test-figura picture img { filter: grayscale(1) contrast(1.05); }
 .test-figura .botella { height: 100%; width: auto; max-height: 30rem; }
 .test { display: grid; gap: 2rem; }
 .test-preguntas { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }

@@ -303,6 +303,50 @@
         "pagina": "https://commons.wikimedia.org/wiki/File:Three-cut_mandarin_orange_peel.jpg",
         "via": "Wikimedia Commons"
       }
+    },
+    "g1": {
+      "ruta": "/assets/img/generadas/g1",
+      "w": 896,
+      "h": 1120,
+      "anchos": [
+        640,
+        896
+      ],
+      "alt": "Botella sin marca fotografiada de cerca, con la etiqueta trasera a la vista",
+      "generada": true
+    },
+    "g2": {
+      "ruta": "/assets/img/generadas/g2",
+      "w": 896,
+      "h": 1120,
+      "anchos": [
+        640,
+        896
+      ],
+      "alt": "Vidrio y líquido a contraluz",
+      "generada": true
+    },
+    "g3": {
+      "ruta": "/assets/img/generadas/g3",
+      "w": 1024,
+      "h": 640,
+      "anchos": [
+        640,
+        1024
+      ],
+      "alt": "Botánicos y lúpulo de cerca",
+      "generada": true
+    },
+    "g4": {
+      "ruta": "/assets/img/generadas/g4",
+      "w": 1168,
+      "h": 876,
+      "anchos": [
+        640,
+        1168
+      ],
+      "alt": "Detalle de una etiqueta con el lote y el nombre del elaborador",
+      "generada": true
     }
   },
   "videos": {
@@ -320,6 +364,14 @@
         "pagina": "https://commons.wikimedia.org/wiki/File:Anderson_Valley_Brewing_Company_-_November_2022_-_Sarah_Stierch_24.webm",
         "via": "Wikimedia Commons"
       }
+    },
+    "v2": {
+      "mp4": "/assets/video/v2.mp4",
+      "webm": "/assets/video/v2.webm",
+      "poster": "/assets/video/v2-poster.jpg",
+      "w": 1920,
+      "h": 1080,
+      "generado": true
     }
   },
   "huecos": {
@@ -329,24 +381,24 @@
       "provisional": true
     },
     "v2": {
-      "poster": "kombucha",
-      "provisional": true
+      "video": "v2",
+      "generado": true
     },
     "g1": {
-      "svg": "botella",
-      "provisional": true
+      "imagen": "g1",
+      "generada": true
     },
     "g2": {
-      "imagen": "kombucha",
-      "provisional": true
+      "imagen": "g2",
+      "generada": true
     },
     "g3": {
-      "imagen": "lupulino",
-      "provisional": true
+      "imagen": "g3",
+      "generada": true
     },
     "g4": {
-      "imagen": "etiqueta-1910",
-      "provisional": true
+      "imagen": "g4",
+      "generada": true
     }
   }
 }

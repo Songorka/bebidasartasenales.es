@@ -62,8 +62,10 @@ async function optimizar(origen, carpeta, nombre, opciones = {}) {
   let base = sharp(origen).rotate();
   let w = meta.width, h = meta.height;
   if (opciones.w && opciones.h) {
-    base = base.resize(opciones.w, opciones.h, { fit: "cover", position: "attention" });
-    w = opciones.w; h = opciones.h;
+    // Recorta a la proporción del hueco sin ampliar nunca la imagen original.
+    const escala = Math.min(1, meta.width / opciones.w, meta.height / opciones.h);
+    w = Math.round(opciones.w * escala); h = Math.round(opciones.h * escala);
+    base = base.resize(w, h, { fit: "cover", position: "attention" });
   }
   const buffer = await base.toBuffer();
   const anchos = ANCHOS.filter((a) => a < w).concat(Math.min(w, 2000));

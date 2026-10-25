@@ -66,7 +66,7 @@ claseCuerpo: es-portada
     <div class="ley-t ley-cabeza superficie"><h2 id="ley-titulo" class="titulo-seccion">Lo que la ley exige</h2></div>
     <figure class="ley-t ley-foto">
       {% hueco "g4", { clase: "cubre", sizes: "(min-width: 48em) 50vw, 100vw" } %}
-      <figcaption>Etiquetas de cerveza de 1910: ya entonces nombraban la cervecera y su ciudad.</figcaption>
+      <figcaption>{% if medios.huecos.g4.generada %}Contraetiqueta de cerca: el lote impreso y, encima, quién responde de la bebida.{% else %}Etiquetas de cerveza de 1910: ya entonces nombraban la cervecera y su ciudad.{% endif %}</figcaption>
     </figure>
     <div class="ley-t ley-cifra campo-2">
       <p class="cifra nums">1,2&nbsp;%</p>
