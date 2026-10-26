@@ -31,7 +31,7 @@ Eleventy 3 (Nunjucks + Markdown) · CSS propio con tokens · JS vanilla mínimo 
 
 ## Datos fijos
 - Dominio: `bebidasartesanales.es` · Correo de venta y contacto: guardado codificado en `src/_data/site.json` (`correoCodificado`, base64). No lo escribas nunca en claro en el repositorio ni en el HTML: en las plantillas usa el atajo `{% correo %}`
-- Titular legal: Duaba Directorship, S.L. (CIF y domicilio los completa el propietario: deja `[CIF]` y `[DOMICILIO]`).
+- Titular legal: Duaba Directorship, S.L. (NIF B87500443 · C/ Oficina de Fuensaldaña, 4, 28232 Las Rozas de Madrid, en `src/_data/site.json`).
 - GitHub: `Songorka/bebidasartasenales.es` (nombre con erratas; comprueba `git remote -v` por si se renombró).
 - Bebidas: cerveza · vermut y destilados · sin alcohol (kombucha, ginger beer, refrescos). **Sin sidra.**
 - Medios: el propietario aportará 1–2 vídeos y varias imágenes generadas con IA. La web se construye con huecos
